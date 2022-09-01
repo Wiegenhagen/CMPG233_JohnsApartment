@@ -23,7 +23,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         public SqlConnection Connect()
         { 
             //Verander die Data Source = na julle PC se naam, kyk wat julle connection string is. Data Source=""DESKTOP-LNM37V2 <--- verander die"
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LNM37V2;Initial Catalog=JOHNS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;User ID=johnsSystem;Password=password;"));
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LNM37V2;Initial Catalog=JOHNS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
             return conn;
         }
     }
