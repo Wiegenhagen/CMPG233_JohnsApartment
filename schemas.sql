@@ -1,3 +1,7 @@
+USE JOHNS;
+GO
+
+
 CREATE TABLE ADMINISTRATOR (
 	Administrator_ID 	int				IDENTITY(1, 1) PRIMARY KEY, 
 	Username  			varchar(30), 
