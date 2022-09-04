@@ -36,6 +36,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,12 +110,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Login";
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(713, 415);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Name = "FormLogin";
             this.Text = "Login Form";
@@ -134,6 +146,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblCreateNewAccount;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

@@ -29,27 +29,32 @@ namespace Group_26_Johns_RealEstate_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblCreateAccount = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelContainer
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.txtConfirmPassword);
-            this.panel1.Controls.Add(this.btnCreateAccount);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.lblCreateAccount);
-            this.panel1.Location = new System.Drawing.Point(285, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 244);
-            this.panel1.TabIndex = 1;
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Controls.Add(this.txtConfirmPassword);
+            this.panelContainer.Controls.Add(this.btnCreateAccount);
+            this.panelContainer.Controls.Add(this.txtPassword);
+            this.panelContainer.Controls.Add(this.txtUsername);
+            this.panelContainer.Controls.Add(this.lblCreateAccount);
+            this.panelContainer.Location = new System.Drawing.Point(285, 88);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(231, 244);
+            this.panelContainer.TabIndex = 1;
             // 
             // btnCreateAccount
             // 
@@ -67,6 +72,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.Text = "Password";
             // 
             // txtUsername
             // 
@@ -74,6 +80,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(100, 20);
             this.txtUsername.TabIndex = 6;
+            this.txtUsername.Text = "Username";
             // 
             // lblCreateAccount
             // 
@@ -90,6 +97,15 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmPassword.TabIndex = 8;
+            this.txtConfirmPassword.Text = "Confirm Password";
+            // 
+            // epPassword
+            // 
+            this.epPassword.ContainerControl = this;
+            // 
+            // epUsername
+            // 
+            this.epUsername.ContainerControl = this;
             // 
             // FormCreateAccount
             // 
@@ -97,22 +113,27 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContainer);
             this.Name = "FormCreateAccount";
             this.Text = "FormCreateAccount";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormCreateAccount_Load);
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblCreateAccount;
         private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.ErrorProvider epPassword;
+        private System.Windows.Forms.ErrorProvider epUsername;
     }
 }

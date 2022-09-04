@@ -27,13 +27,15 @@ namespace Group_26_Johns_RealEstate_Management_System
             txtPassword_SetText();
         }
 
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
         }
 
-
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         protected void txtUsername_SetText()
         {
@@ -65,6 +67,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void lblCreateAccount_Click(object sender, EventArgs e)
         {
+            //FormLogin account = new FormLogin();
             FormCreateAccount newaccount = new FormCreateAccount();
             this.Hide();
             newaccount.Show();
@@ -80,33 +83,5 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             lblCreateNewAccount.ForeColor = Color.Black;
         }
-
-
-
-
-
-
-
-        /*using System.Security.Cryptography;
-        //Global variables
-        string password;
-
-
-
-        //GenerateHash method, uses the SHA256 function to Hash the users password
-        public string GenerateHash(string password)
-        {
-            //Get the bytes of the string
-            //Encodes a set of characters into a sequence of bytes.
-            //Convert password string to byte arrray
-            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-
-            //SHA-256 is a patented cryptographic hash function that outputs a value that is 256 bits long.
-            //data is transformed into a secure format that is unreadable unless the recipient has a key
-            passwordBytes = SHA256.Create().ComputeHash(passwordBytes);
-
-            return Encoding.UTF8.GetString(passwordBytes);
-        }*/
-
     }
 }
