@@ -58,7 +58,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                             //GenerateHash(password);  //GenerateHash method
 
-
+                            //add username and password to DB  **
 
                             FormLogin account = new FormLogin();
                             this.Close();
