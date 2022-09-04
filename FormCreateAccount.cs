@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace Group_26_Johns_RealEstate_Management_System
 {
@@ -20,6 +21,13 @@ namespace Group_26_Johns_RealEstate_Management_System
         public FormCreateAccount()
         {
             InitializeComponent();
+            SqlConnection conn = Connect();
+        }
+
+        public SqlConnection Connect()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LNM37V2;Initial Catalog=JOHNS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            return conn;
         }
 
         private void FormCreateAccount_Load(object sender, EventArgs e)
