@@ -16,5 +16,13 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            FormLogin username = new FormLogin();
+            lblWelcome.Text = "Welcome, " + username.txtUsername.Text;
+            DateTime today = DateTime.Today;
+            lblDate.Text = today.ToString("dd MMMM yyy");
+        }
     }
 }
