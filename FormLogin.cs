@@ -29,7 +29,11 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //validate login  **
 
+            FormMain main = new FormMain();
+            this.Hide();
+            main.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -71,7 +75,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             FormCreateAccount newaccount = new FormCreateAccount();
             this.Hide();
             newaccount.Show();
-            
         }
 
         private void lblCreateAccount_MouseEnter(object sender, EventArgs e)
