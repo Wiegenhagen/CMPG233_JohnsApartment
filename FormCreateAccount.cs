@@ -92,6 +92,13 @@ namespace Group_26_Johns_RealEstate_Management_System
             }
         }
 
+        private void lblCancel_Click(object sender, EventArgs e)
+        {
+            FormLogin account = new FormLogin();
+            this.Close();
+            account.Show();
+        }
+
         protected void txtUsername_SetText()
         {
             this.txtUsername.Text = "Username";
@@ -135,6 +142,17 @@ namespace Group_26_Johns_RealEstate_Management_System
         }
 
 
+        private void lblCancel_MouseEnter(object sender, EventArgs e)
+        {
+            lblCancel.ForeColor = Color.Blue;
+        }
+
+        private void lblCancel_MouseLeave(object sender, EventArgs e)
+        {
+            lblCancel.ForeColor = Color.Black;
+        }
+
+
 
         //GenerateHash method, uses the SHA256 function to Hash the users password
         public string GenerateHash(string password)
@@ -150,7 +168,6 @@ namespace Group_26_Johns_RealEstate_Management_System
 
             return Encoding.UTF8.GetString(passwordBytes);
         }
-
 
     }
 }

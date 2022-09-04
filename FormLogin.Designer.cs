@@ -37,6 +37,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnSkip = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,12 +121,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnSkip
+            // 
+            this.btnSkip.Location = new System.Drawing.Point(624, 320);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(113, 58);
+            this.btnSkip.TabIndex = 10;
+            this.btnSkip.Text = "Skip to main form (temp button)";
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Name = "FormLogin";
@@ -143,10 +155,11 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblCreateNewAccount;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnSkip;
+        public System.Windows.Forms.TextBox txtUsername;
     }
 }
 

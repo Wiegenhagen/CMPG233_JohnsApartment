@@ -86,5 +86,12 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             lblCreateNewAccount.ForeColor = Color.Black;
         }
+
+        private void btnSkip_Click(object sender, EventArgs e)  //temp button
+        {
+            FormMain main = new FormMain();
+            this.Hide();
+            main.Show();
+        }
     }
 }

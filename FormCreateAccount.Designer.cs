@@ -31,13 +31,14 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             this.components = new System.ComponentModel.Container();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblCreateAccount = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblCancel = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
@@ -46,6 +47,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Controls.Add(this.lblCancel);
             this.panelContainer.Controls.Add(this.txtConfirmPassword);
             this.panelContainer.Controls.Add(this.btnCreateAccount);
             this.panelContainer.Controls.Add(this.txtPassword);
@@ -53,8 +55,16 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panelContainer.Controls.Add(this.lblCreateAccount);
             this.panelContainer.Location = new System.Drawing.Point(285, 88);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(231, 244);
+            this.panelContainer.Size = new System.Drawing.Size(231, 241);
             this.panelContainer.TabIndex = 1;
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(65, 139);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmPassword.TabIndex = 8;
+            this.txtConfirmPassword.Text = "Confirm Password";
             // 
             // btnCreateAccount
             // 
@@ -91,14 +101,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblCreateAccount.TabIndex = 5;
             this.lblCreateAccount.Text = "Create New Account";
             // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(65, 139);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtConfirmPassword.TabIndex = 8;
-            this.txtConfirmPassword.Text = "Confirm Password";
-            // 
             // epPassword
             // 
             this.epPassword.ContainerControl = this;
@@ -106,6 +108,18 @@ namespace Group_26_Johns_RealEstate_Management_System
             // epUsername
             // 
             this.epUsername.ContainerControl = this;
+            // 
+            // lblCancel
+            // 
+            this.lblCancel.AutoSize = true;
+            this.lblCancel.Location = new System.Drawing.Point(188, 222);
+            this.lblCancel.Name = "lblCancel";
+            this.lblCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblCancel.TabIndex = 9;
+            this.lblCancel.Text = "Cancel";
+            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
+            this.lblCancel.MouseEnter += new System.EventHandler(this.lblCancel_MouseEnter);
+            this.lblCancel.MouseLeave += new System.EventHandler(this.lblCancel_MouseLeave);
             // 
             // FormCreateAccount
             // 
@@ -135,5 +149,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.ErrorProvider epPassword;
         private System.Windows.Forms.ErrorProvider epUsername;
+        private System.Windows.Forms.Label lblCancel;
     }
 }
