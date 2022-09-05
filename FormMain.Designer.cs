@@ -48,6 +48,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.appartmentsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactHelpDeskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pbBanner = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).BeginInit();
             this.SuspendLayout();
@@ -182,8 +182,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.addNewUserToolStripMenuItem,
             this.deleteAccountToolStripMenuItem});
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.accountToolStripMenuItem.Text = "Accounts";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.accountToolStripMenuItem.Text = "Users";
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -191,11 +191,17 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            // 
             // deleteAccountToolStripMenuItem
             // 
             this.deleteAccountToolStripMenuItem.Name = "deleteAccountToolStripMenuItem";
             this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteAccountToolStripMenuItem.Text = "Delete Account";
+            this.deleteAccountToolStripMenuItem.Text = "Delete User";
             // 
             // helpToolStripMenuItem
             // 
@@ -257,12 +263,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblDate.Size = new System.Drawing.Size(208, 33);
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = "1 Januaruy 2020";
-            // 
-            // addNewUserToolStripMenuItem
-            // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
             // 
             // FormMain
             // 
