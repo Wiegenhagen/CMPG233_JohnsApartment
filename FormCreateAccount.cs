@@ -26,7 +26,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         public SqlConnection Connect()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LNM37V2;Initial Catalog=JOHNS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
+            SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;Initial Catalog=JOHNS;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             return conn;
         }
 
