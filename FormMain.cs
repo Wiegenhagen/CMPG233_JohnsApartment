@@ -20,7 +20,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         private void FormMain_Load(object sender, EventArgs e)
         {
             FormLogin username = new FormLogin();
-            lblWelcome.Text = "Welcome, " + username.txtUsername.Text;
+            lblWelcome.Text = "Welcome, " + username.name;
             DateTime today = DateTime.Today;
             lblDate.Text = today.ToString("dd MMMM yyy");
         }

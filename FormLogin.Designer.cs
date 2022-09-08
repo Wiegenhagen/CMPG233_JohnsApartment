@@ -29,6 +29,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCreateNewAccount = new System.Windows.Forms.Label();
@@ -38,7 +39,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSkip = new System.Windows.Forms.Button();
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -47,7 +52,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblWelcome.Location = new System.Drawing.Point(82, 17);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(62, 13);
-            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.TabIndex = 5;
             this.lblWelcome.Text = "WELCOME";
             // 
             // panel1
@@ -70,7 +75,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblCreateNewAccount.Location = new System.Drawing.Point(125, 221);
             this.lblCreateNewAccount.Name = "lblCreateNewAccount";
             this.lblCreateNewAccount.Size = new System.Drawing.Size(103, 13);
-            this.lblCreateNewAccount.TabIndex = 8;
+            this.lblCreateNewAccount.TabIndex = 3;
             this.lblCreateNewAccount.Text = "Create new account";
             this.lblCreateNewAccount.Click += new System.EventHandler(this.lblCreateAccount_Click);
             this.lblCreateNewAccount.MouseEnter += new System.EventHandler(this.lblCreateAccount_MouseEnter);
@@ -81,7 +86,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnLogin.Location = new System.Drawing.Point(69, 173);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -91,16 +96,18 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtPassword.Location = new System.Drawing.Point(65, 126);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(65, 85);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(100, 20);
-            this.txtUsername.TabIndex = 6;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblLogin
             // 
@@ -108,7 +115,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblLogin.Location = new System.Drawing.Point(97, 46);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(33, 13);
-            this.lblLogin.TabIndex = 5;
+            this.lblLogin.TabIndex = 4;
             this.lblLogin.Text = "Login";
             // 
             // btnExit
@@ -116,7 +123,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnExit.Location = new System.Drawing.Point(713, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 9;
+            this.btnExit.TabIndex = 1;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -131,6 +138,14 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnSkip.UseVisualStyleBackColor = true;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
+            // epPassword
+            // 
+            this.epPassword.ContainerControl = this;
+            // 
+            // epUsername
+            // 
+            this.epUsername.ContainerControl = this;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,9 +157,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Controls.Add(this.panel1);
             this.Name = "FormLogin";
             this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,7 +175,9 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Label lblCreateNewAccount;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSkip;
-        public System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.ErrorProvider epPassword;
+        private System.Windows.Forms.ErrorProvider epUsername;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }
 
