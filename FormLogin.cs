@@ -13,11 +13,10 @@ namespace Group_26_Johns_RealEstate_Management_System
 {
     public partial class FormLogin : Form
     {
-        //Global variables, sql connection and components
+        //public variables, sql connection and components
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlCommand comm;
         public bool username, passwrd;
-        public string name;
 
         public FormLogin()
         {
@@ -47,7 +46,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                         {
                             if (datHash == passHash)  //validate password
                             {
-                                name = txtUsername.Text;  //assign username to gloobal variable
+                                Global.Name = txtUsername.Text;  //assign username to gloobal variable
 
                                 FormMain main = new FormMain();  //continue to main form
                                 this.Hide();
@@ -188,5 +187,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Hide();
             main.Show();
         }
+    }
+
+    class Global  //global varaibles
+    {
+        public static string Name;
+        public static bool chg, dlt;
     }
 }
