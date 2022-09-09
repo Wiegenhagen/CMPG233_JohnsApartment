@@ -18,6 +18,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlCommand comm;
         public SqlDataAdapter adapter;
+        public SqlDataReader dReader;
 
         public FormUsers()
         {
@@ -29,77 +30,141 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try  //exception handeling
             {
-                epPassword.SetError(txtReEnter, "");  //Reset error provider for username, password and confirm password
+                epPassword.SetError(txtReEnter, "");  //Reset error provider for username, password and confirm password, panels
                 epReEnterPassword.SetError(txtPassword, "");
                 epConfirmPassword.SetError(txtConfirm, "");
+                epDelete.SetError(txtDelete, "");
+                epDeletePass.SetError(txtPassDelete, "");
+                pChange.Visible = false;
+                pDelete.Visible = false;
 
-                if (txtReEnter.Text != "")  //validate re-entered password
+                FormMain main = new FormMain();
+
+                if (main.chg)  //validate change
                 {
-                    FormLogin username = new FormLogin();
+                    btnChangeDelete.Text = "Change";  //change butten name, panel visible
+                    pChange.Visible = true;
 
-                    conn.Open();  //open sql connection, fetch hashed password for username
-                    comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{username.name}'", conn);
-                    string datHash = (string)comm.ExecuteScalar();
-                    conn.Close();  //close sql connection
-
-                    string passHash = GenerateHash(txtReEnter.Text);  //create password hash for entered password
-
-                    if (datHash == passHash)
+                    if (txtReEnter.Text != "")  //validate re-entered password
                     {
-                        if (txtPassword.Text != "")
+                        FormLogin username = new FormLogin();
+
+                        conn.Open();  //open sql connection, fetch hashed password for username
+                        comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{username.name}'", conn);
+                        string datHash = (string)comm.ExecuteScalar();
+                        conn.Close();  //close sql connection
+
+                        string passHash = GenerateHash(txtReEnter.Text);  //create password hash for entered password
+
+                        if (datHash == passHash)
                         {
-                            String errorMg;  //create a error message string
-                            if (validatePass(txtPassword.Text, out errorMg))    //validate all password categories
+                            if (txtPassword.Text != "")
                             {
-                                if (txtPassword.Text == txtConfirm.Text)  //Test if passwords match
+                                String errorMg;  //create a error message string
+                                if (validatePass(txtPassword.Text, out errorMg))    //validate all password categories
                                 {
-                                    string password = txtConfirm.Text;  //Assign password
-                                    string paswordHash = GenerateHash(password);  //GenerateHash method
+                                    if (txtPassword.Text == txtConfirm.Text)  //Test if passwords match
+                                    {
+                                        string password = txtConfirm.Text;  //Assign password
+                                        string paswordHash = GenerateHash(password);  //GenerateHash method
 
-                                    conn.Open();  //add new password to database
+                                        conn.Open();  //add new password to database
 
-                                    comm = new SqlCommand($"UPDATE ADMINISTRATOR (Password) VALUES ('{paswordHash}')", conn);
-                                    adapter = new SqlDataAdapter();
+                                        comm = new SqlCommand($"UPDATE ADMINISTRATOR (Password) VALUES ('{paswordHash}')", conn);
+                                        adapter = new SqlDataAdapter();
 
-                                    adapter.InsertCommand = comm;
-                                    adapter.InsertCommand.ExecuteNonQuery();
+                                        adapter.InsertCommand = comm;
+                                        adapter.InsertCommand.ExecuteNonQuery();
 
-                                    conn.Close();
+                                        conn.Close();
 
-                                    MessageBox.Show("Password Changed Successfully");  //Display message
-                                    this.Close();  //close form
+                                        MessageBox.Show("Password Changed Successfully");  //Display message
+                                        this.Close();  //close form
+                                    }
+                                    else  //Passwords not matching
+                                    {
+                                        epConfirmPassword.SetError(txtConfirm, "Password do not match");  //Display message, reset contorols
+                                        txtConfirm.Text = "";
+                                        txtConfirm.Focus();
+                                    }
                                 }
-                                else  //Passwords not matching
+                                else  //incorrect passwors structure
                                 {
-                                    epConfirmPassword.SetError(txtConfirm, "Password do not match");  //Display message, reset contorols
-                                    txtConfirm.Text = "";
-                                    txtConfirm.Focus();
+                                    epReEnterPassword.SetError(txtPassword, errorMg);  //Display message
+                                    txtPassword.Focus();
+                                    txtPassword.Text = "";
                                 }
                             }
-                            else  //incorrect passwors structure
+                            else  //No password enetered
                             {
-                                epReEnterPassword.SetError(txtPassword, errorMg);  //Display message
+                                epReEnterPassword.SetError(txtPassword, "Password Required");  //Display message
                                 txtPassword.Focus();
-                                txtPassword.Text = "";
                             }
                         }
-                        else  //No password enetered
+                        else  //invalid password
                         {
-                            epReEnterPassword.SetError(txtPassword, "Password Required");  //Display message
-                            txtPassword.Focus();
+                            epReEnterPassword.SetError(txtReEnter, "Invalid password");  //display message, reset contorols
+                            txtReEnter.Text = "";
+                            txtReEnter.Focus();
                         }
                     }
-                    else  //invalid password
+                    else  //Password not re-entered
                     {
-                        epReEnterPassword.SetError(txtReEnter, "Invalid password");  //display message, reset contorols
-                        txtReEnter.Text = "";
+                        epReEnterPassword.SetError(txtReEnter, "Please re-enter password");  //Display message
                         txtReEnter.Focus();
                     }
                 }
-                else  //Password not re-entered
+                else if (main.dlt)  //validate delete
                 {
-                    epReEnterPassword.SetError(txtReEnter, "Please re-enter password");  //Display message
-                    txtReEnter.Focus();
+                    btnChangeDelete.Text = "Delete";  //change butten name, panel visible
+                    pDelete.Visible = true;
+
+                    if (ValidateUsername(txtDelete.Text))
+                    {
+                        if (txtPassDelete.Text != "")  //validate password
+                        {
+                            FormLogin username = new FormLogin();
+
+                            conn.Open();  //open sql connection, fetch hashed password for username
+                            comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{username.name}'", conn);
+                            string datHash = (string)comm.ExecuteScalar();
+                            conn.Close();  //close sql connection
+
+                            string passHash = GenerateHash(txtPassDelete.Text);  //create password hash for entered password
+
+                            if (datHash == passHash)
+                            {
+                                conn.Open();  //delete account
+
+                                comm = new SqlCommand($"DELETE FROM ADMINISTRATOR WHERE Username = ('{txtDelete.Text}')", conn);
+                                adapter = new SqlDataAdapter();
+
+                                adapter.DeleteCommand = comm;
+                                adapter.DeleteCommand.ExecuteNonQuery();
+
+                                conn.Close();
+
+                                MessageBox.Show("Account with username " + txtDelete.Text + " has been successfully deleted.");  //display message
+                            }
+                            else  //invalid password
+                            {
+                                epDeletePass.SetError(txtPassDelete, "Invalid password");  //display message, reset contorols
+                                txtPassDelete.Text = "";
+                                txtPassDelete.Focus();
+                            }
+                        }
+                        else  //Password not entered
+                        {
+                            epDeletePass.SetError(txtPassDelete, "Please enter password");  //Display message
+                            txtPassDelete.Focus();
+                        }
+                    }
+                    else  //invalid username
+                    {
+                        epDelete.SetError(txtDelete, "Invalid Account");
+                        txtDelete.Text = "";
+                        txtDelete.Focus();
+                    }
                 } 
             }
             catch (SqlException error)  //catch and display error to user
@@ -128,6 +193,42 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                 return sb.ToString();  //return encripted password characters
             }
+        }
+
+        private bool ValidateUsername(string username)
+        {
+            string[] usernames = new string[100];  //create array and variables
+            int count = 0;
+
+            try  //exception handeling
+            {
+                conn.Open();  //select usernames
+
+                comm = new SqlCommand($"SELECT Username FROM ADMINISTRATOR", conn);
+                dReader = comm.ExecuteReader();
+
+                while (dReader.Read())  //add usernames to array
+                {
+                    usernames[count] = dReader.GetValue(0).ToString();
+                    count++;
+                }
+
+                conn.Close();
+            }
+            catch (SqlException error)  //catch exceptions
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            for (int i = 0; i < count; i++)  //validate username
+            {
+                if (username == usernames[i])
+                {
+                    return false;  //return false
+                }
+            }
+
+            return true;  //return true
         }
 
         private bool validatePass(string pass, out string err)  //password validation method
