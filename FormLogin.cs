@@ -14,10 +14,9 @@ namespace Group_26_Johns_RealEstate_Management_System
     public partial class FormLogin : Form
     {
         //Global variables, sql connection and components
-        SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlCommand comm;
-        public SqlDataReader dReader;
-        Boolean username, passwrd;
+        public Boolean username, passwrd;
         public string name;
 
         public FormLogin()

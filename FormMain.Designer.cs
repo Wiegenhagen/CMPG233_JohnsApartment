@@ -90,7 +90,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.residentsToolStripMenuItem.Name = "residentsToolStripMenuItem";
-            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.residentsToolStripMenuItem.Text = "Residents";
             // 
             // addNewToolStripMenuItem
@@ -118,7 +118,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeAppartmentToolStripMenuItem,
             this.editExistingAppartmentToolStripMenuItem});
             this.apartmentsToolStripMenuItem.Name = "apartmentsToolStripMenuItem";
-            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.apartmentsToolStripMenuItem.Text = "Apartments";
             // 
             // addNewToolStripMenuItem1
@@ -154,7 +154,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.residentsReportToolStripMenuItem,
             this.appartmentsReportToolStripMenuItem});
             this.requestAReportToolStripMenuItem.Name = "requestAReportToolStripMenuItem";
-            this.requestAReportToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.requestAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.requestAReportToolStripMenuItem.Text = "Request a Report";
             // 
             // fullReportToolStripMenuItem
@@ -188,20 +188,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // deleteAccountToolStripMenuItem
             // 
             this.deleteAccountToolStripMenuItem.Name = "deleteAccountToolStripMenuItem";
-            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteAccountToolStripMenuItem.Text = "Delete User";
+            this.deleteAccountToolStripMenuItem.Click += new System.EventHandler(this.deleteAccountToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -216,20 +219,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             // contactHelpDeskToolStripMenuItem
             // 
             this.contactHelpDeskToolStripMenuItem.Name = "contactHelpDeskToolStripMenuItem";
-            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contactHelpDeskToolStripMenuItem.Text = "Contact Help Desk";
+            this.contactHelpDeskToolStripMenuItem.Click += new System.EventHandler(this.contactHelpDeskToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem
             // 
             this.exitProgramToolStripMenuItem.Name = "exitProgramToolStripMenuItem";
-            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitProgramToolStripMenuItem.Text = "Report An Issue";
+            this.exitProgramToolStripMenuItem.Click += new System.EventHandler(this.exitProgramToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem1
             // 
             this.exitProgramToolStripMenuItem1.Name = "exitProgramToolStripMenuItem1";
-            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.exitProgramToolStripMenuItem1.Text = "Exit Program";
+            this.exitProgramToolStripMenuItem1.Click += new System.EventHandler(this.exitProgramToolStripMenuItem1_Click);
             // 
             // pbBanner
             // 
