@@ -14,7 +14,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 {
     public partial class FormUsers : Form
     {
-        //Global sql connection and components
+        //public sql connection and components
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlCommand comm;
         public SqlDataAdapter adapter;
@@ -26,31 +26,40 @@ namespace Group_26_Johns_RealEstate_Management_System
             PasswordInitialization();
         }
 
+        private void FormUsers_Load(object sender, EventArgs e)
+        {
+            pChange.Visible = false;
+            pDelete.Visible = false;
+            if (Global.chg)  //validate change
+            {
+                btnChangeDelete.Text = "Change";  //change button name, panel visible, bring to front
+                pChange.Visible = true;
+                pChange.BringToFront();
+            }
+            else if (Global.dlt)  //validate delete
+            {
+                btnChangeDelete.Text = "Delete";  //change button name, panel visible, bring to front
+                pDelete.Visible = true;
+                pChange.BringToFront();
+            }
+        }
+
         private void btnChange_Click(object sender, EventArgs e)
         {
             try  //exception handeling
             {
-                epPassword.SetError(txtReEnter, "");  //Reset error provider for username, password and confirm password, panels
-                epReEnterPassword.SetError(txtPassword, "");
+                epPassword.SetError(txtPassword, "");  //Reset error provider for username, password and confirm password, panels
+                epReEnterPassword.SetError(txtReEnter, "");
                 epConfirmPassword.SetError(txtConfirm, "");
                 epDelete.SetError(txtDelete, "");
                 epDeletePass.SetError(txtPassDelete, "");
-                pChange.Visible = false;
-                pDelete.Visible = false;
 
-                FormMain main = new FormMain();
-
-                if (main.chg)  //validate change
+                if (Global.chg)  //validate change
                 {
-                    btnChangeDelete.Text = "Change";  //change butten name, panel visible
-                    pChange.Visible = true;
-
                     if (txtReEnter.Text != "")  //validate re-entered password
                     {
-                        FormLogin username = new FormLogin();
-
                         conn.Open();  //open sql connection, fetch hashed password for username
-                        comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{username.name}'", conn);
+                        comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{Global.Name}'", conn);
                         string datHash = (string)comm.ExecuteScalar();
                         conn.Close();  //close sql connection
 
@@ -70,7 +79,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                                         conn.Open();  //add new password to database
 
-                                        comm = new SqlCommand($"UPDATE ADMINISTRATOR (Password) VALUES ('{paswordHash}')", conn);
+                                        comm = new SqlCommand($"UPDATE ADMINISTRATOR SET Password ='{paswordHash}' WHERE Username ='{Global.Name}'", conn);
                                         adapter = new SqlDataAdapter();
 
                                         adapter.InsertCommand = comm;
@@ -78,7 +87,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                                         conn.Close();
 
-                                        MessageBox.Show("Password Changed Successfully");  //Display message
+                                        MessageBox.Show("Password Changed Successfully" + "\nPlease log in with new password");  //Display message
                                         this.Close();  //close form
                                     }
                                     else  //Passwords not matching
@@ -90,14 +99,14 @@ namespace Group_26_Johns_RealEstate_Management_System
                                 }
                                 else  //incorrect passwors structure
                                 {
-                                    epReEnterPassword.SetError(txtPassword, errorMg);  //Display message
+                                    epPassword.SetError(txtPassword, errorMg);  //Display message
                                     txtPassword.Focus();
                                     txtPassword.Text = "";
                                 }
                             }
                             else  //No password enetered
                             {
-                                epReEnterPassword.SetError(txtPassword, "Password Required");  //Display message
+                                epPassword.SetError(txtPassword, "Password Required");  //Display message
                                 txtPassword.Focus();
                             }
                         }
@@ -114,19 +123,14 @@ namespace Group_26_Johns_RealEstate_Management_System
                         txtReEnter.Focus();
                     }
                 }
-                else if (main.dlt)  //validate delete
+                else if (Global.dlt)  //validate delete
                 {
-                    btnChangeDelete.Text = "Delete";  //change butten name, panel visible
-                    pDelete.Visible = true;
-
                     if (ValidateUsername(txtDelete.Text))
                     {
                         if (txtPassDelete.Text != "")  //validate password
                         {
-                            FormLogin username = new FormLogin();
-
                             conn.Open();  //open sql connection, fetch hashed password for username
-                            comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{username.name}'", conn);
+                            comm = new SqlCommand($"Select Password FROM ADMINISTRATOR WHERE Username LIKE '{Global.Name}'", conn);
                             string datHash = (string)comm.ExecuteScalar();
                             conn.Close();  //close sql connection
 
@@ -145,6 +149,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                                 conn.Close();
 
                                 MessageBox.Show("Account with username " + txtDelete.Text + " has been successfully deleted.");  //display message
+                                this.Close();
                             }
                             else  //invalid password
                             {
@@ -163,6 +168,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                     {
                         epDelete.SetError(txtDelete, "Invalid Account");
                         txtDelete.Text = "";
+                        txtPassDelete.Text= "";
                         txtDelete.Focus();
                     }
                 } 
@@ -224,11 +230,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             {
                 if (username == usernames[i])
                 {
-                    return false;  //return false
+                    return true;  //return true
                 }
             }
 
-            return true;  //return true
+            return false;  //return false
         }
 
         private bool validatePass(string pass, out string err)  //password validation method
@@ -279,6 +285,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             txtReEnter.PasswordChar = '*';
             txtPassword.PasswordChar = '*';
             txtConfirm.PasswordChar = '*';
+            txtPassDelete.PasswordChar = '*';
         }
     }
 }

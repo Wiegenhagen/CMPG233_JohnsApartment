@@ -153,7 +153,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             // pChange
             // 
             this.pChange.BackColor = System.Drawing.SystemColors.Window;
-            this.pChange.Controls.Add(this.pDelete);
             this.pChange.Controls.Add(this.lblTitle);
             this.pChange.Controls.Add(this.lblReEnter);
             this.pChange.Controls.Add(this.txtReEnter);
@@ -169,58 +168,58 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // pDelete
             // 
-            this.pDelete.BackColor = System.Drawing.Color.White;
+            this.pDelete.BackColor = System.Drawing.SystemColors.Window;
             this.pDelete.Controls.Add(this.lblUsername);
             this.pDelete.Controls.Add(this.txtDelete);
             this.pDelete.Controls.Add(this.lblPassword);
             this.pDelete.Controls.Add(this.txtPassDelete);
             this.pDelete.Controls.Add(this.lblDeleteAccount);
-            this.pDelete.Location = new System.Drawing.Point(0, 0);
+            this.pDelete.Location = new System.Drawing.Point(45, 12);
             this.pDelete.Name = "pDelete";
             this.pDelete.Size = new System.Drawing.Size(219, 234);
-            this.pDelete.TabIndex = 10;
+            this.pDelete.TabIndex = 12;
             this.pDelete.Visible = false;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(20, 77);
+            this.lblUsername.Location = new System.Drawing.Point(18, 68);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(133, 13);
-            this.lblUsername.TabIndex = 6;
+            this.lblUsername.TabIndex = 16;
             this.lblUsername.Text = "Enter Username To Delete";
             // 
             // txtDelete
             // 
-            this.txtDelete.Location = new System.Drawing.Point(23, 102);
+            this.txtDelete.Location = new System.Drawing.Point(21, 93);
             this.txtDelete.Name = "txtDelete";
             this.txtDelete.Size = new System.Drawing.Size(154, 20);
-            this.txtDelete.TabIndex = 7;
+            this.txtDelete.TabIndex = 17;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(20, 142);
+            this.lblPassword.Location = new System.Drawing.Point(18, 133);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(141, 13);
-            this.lblPassword.TabIndex = 8;
+            this.lblPassword.TabIndex = 18;
             this.lblPassword.Text = "Please Enter Your Password";
             // 
             // txtPassDelete
             // 
-            this.txtPassDelete.Location = new System.Drawing.Point(23, 166);
+            this.txtPassDelete.Location = new System.Drawing.Point(21, 157);
             this.txtPassDelete.Name = "txtPassDelete";
             this.txtPassDelete.Size = new System.Drawing.Size(154, 20);
-            this.txtPassDelete.TabIndex = 9;
+            this.txtPassDelete.TabIndex = 19;
             // 
             // lblDeleteAccount
             // 
             this.lblDeleteAccount.AutoSize = true;
             this.lblDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeleteAccount.Location = new System.Drawing.Point(35, 17);
+            this.lblDeleteAccount.Location = new System.Drawing.Point(33, 8);
             this.lblDeleteAccount.Name = "lblDeleteAccount";
             this.lblDeleteAccount.Size = new System.Drawing.Size(156, 25);
-            this.lblDeleteAccount.TabIndex = 4;
+            this.lblDeleteAccount.TabIndex = 15;
             this.lblDeleteAccount.Text = "Delete Accoount";
             // 
             // epDelete
@@ -235,12 +234,14 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 298);
+            this.ClientSize = new System.Drawing.Size(313, 298);
+            this.Controls.Add(this.pDelete);
             this.Controls.Add(this.pChange);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChangeDelete);
             this.Name = "FormUsers";
             this.Text = "FormUsers";
+            this.Load += new System.EventHandler(this.FormUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epReEnterPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epConfirmPassword)).EndInit();
@@ -269,13 +270,13 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ErrorProvider epReEnterPassword;
         private System.Windows.Forms.ErrorProvider epConfirmPassword;
         private System.Windows.Forms.Panel pChange;
+        private System.Windows.Forms.ErrorProvider epDelete;
+        private System.Windows.Forms.ErrorProvider epDeletePass;
         private System.Windows.Forms.Panel pDelete;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtDelete;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassDelete;
         private System.Windows.Forms.Label lblDeleteAccount;
-        private System.Windows.Forms.ErrorProvider epDelete;
-        private System.Windows.Forms.ErrorProvider epDeletePass;
     }
 }

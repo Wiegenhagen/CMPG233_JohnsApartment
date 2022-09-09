@@ -53,12 +53,26 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactHelpDeskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitProgramToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pbBanner = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.lblResidents = new System.Windows.Forms.Label();
+            this.lblApartments = new System.Windows.Forms.Label();
+            this.lblTAppartments = new System.Windows.Forms.Label();
+            this.pAppartments = new System.Windows.Forms.Panel();
+            this.pResidents = new System.Windows.Forms.Panel();
+            this.lblTResidents = new System.Windows.Forms.Label();
+            this.pUsers = new System.Windows.Forms.Panel();
+            this.lblTUsers = new System.Windows.Forms.Label();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.mcCal = new System.Windows.Forms.MonthCalendar();
             this.msMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).BeginInit();
+            this.pAppartments.SuspendLayout();
+            this.pResidents.SuspendLayout();
+            this.pUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMain
@@ -90,7 +104,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.residentsToolStripMenuItem.Name = "residentsToolStripMenuItem";
-            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.residentsToolStripMenuItem.Text = "Residents";
             // 
             // addNewToolStripMenuItem
@@ -118,7 +132,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeAppartmentToolStripMenuItem,
             this.editExistingAppartmentToolStripMenuItem});
             this.apartmentsToolStripMenuItem.Name = "apartmentsToolStripMenuItem";
-            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.apartmentsToolStripMenuItem.Text = "Apartments";
             // 
             // addNewToolStripMenuItem1
@@ -154,7 +168,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.residentsReportToolStripMenuItem,
             this.appartmentsReportToolStripMenuItem});
             this.requestAReportToolStripMenuItem.Name = "requestAReportToolStripMenuItem";
-            this.requestAReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.requestAReportToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.requestAReportToolStripMenuItem.Text = "Request a Report";
             // 
             // fullReportToolStripMenuItem
@@ -188,21 +202,21 @@ namespace Group_26_Johns_RealEstate_Management_System
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
             this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // deleteAccountToolStripMenuItem
             // 
             this.deleteAccountToolStripMenuItem.Name = "deleteAccountToolStripMenuItem";
-            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.deleteAccountToolStripMenuItem.Text = "Delete User";
             this.deleteAccountToolStripMenuItem.Click += new System.EventHandler(this.deleteAccountToolStripMenuItem_Click);
             // 
@@ -211,6 +225,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contactHelpDeskToolStripMenuItem,
             this.exitProgramToolStripMenuItem,
+            this.logOutToolStripMenuItem,
             this.exitProgramToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -219,21 +234,28 @@ namespace Group_26_Johns_RealEstate_Management_System
             // contactHelpDeskToolStripMenuItem
             // 
             this.contactHelpDeskToolStripMenuItem.Name = "contactHelpDeskToolStripMenuItem";
-            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.contactHelpDeskToolStripMenuItem.Text = "Contact Help Desk";
             this.contactHelpDeskToolStripMenuItem.Click += new System.EventHandler(this.contactHelpDeskToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem
             // 
             this.exitProgramToolStripMenuItem.Name = "exitProgramToolStripMenuItem";
-            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.exitProgramToolStripMenuItem.Text = "Report An Issue";
             this.exitProgramToolStripMenuItem.Click += new System.EventHandler(this.exitProgramToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem1
             // 
             this.exitProgramToolStripMenuItem1.Name = "exitProgramToolStripMenuItem1";
-            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.exitProgramToolStripMenuItem1.Text = "Exit Program";
             this.exitProgramToolStripMenuItem1.Click += new System.EventHandler(this.exitProgramToolStripMenuItem1_Click);
             // 
@@ -270,11 +292,108 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = "1 Januaruy 2020";
             // 
+            // lblResidents
+            // 
+            this.lblResidents.AutoSize = true;
+            this.lblResidents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResidents.Location = new System.Drawing.Point(14, 18);
+            this.lblResidents.Name = "lblResidents";
+            this.lblResidents.Size = new System.Drawing.Size(120, 20);
+            this.lblResidents.TabIndex = 4;
+            this.lblResidents.Text = "Total Residents";
+            // 
+            // lblApartments
+            // 
+            this.lblApartments.AutoSize = true;
+            this.lblApartments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApartments.Location = new System.Drawing.Point(3, 13);
+            this.lblApartments.Name = "lblApartments";
+            this.lblApartments.Size = new System.Drawing.Size(131, 20);
+            this.lblApartments.TabIndex = 5;
+            this.lblApartments.Text = "Total Apartments";
+            // 
+            // lblTAppartments
+            // 
+            this.lblTAppartments.AutoSize = true;
+            this.lblTAppartments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTAppartments.Location = new System.Drawing.Point(54, 58);
+            this.lblTAppartments.Name = "lblTAppartments";
+            this.lblTAppartments.Size = new System.Drawing.Size(0, 29);
+            this.lblTAppartments.TabIndex = 6;
+            // 
+            // pAppartments
+            // 
+            this.pAppartments.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pAppartments.Controls.Add(this.lblApartments);
+            this.pAppartments.Controls.Add(this.lblTAppartments);
+            this.pAppartments.Location = new System.Drawing.Point(21, 203);
+            this.pAppartments.Name = "pAppartments";
+            this.pAppartments.Size = new System.Drawing.Size(157, 131);
+            this.pAppartments.TabIndex = 7;
+            // 
+            // pResidents
+            // 
+            this.pResidents.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pResidents.Controls.Add(this.lblTResidents);
+            this.pResidents.Controls.Add(this.lblResidents);
+            this.pResidents.Location = new System.Drawing.Point(21, 383);
+            this.pResidents.Name = "pResidents";
+            this.pResidents.Size = new System.Drawing.Size(157, 131);
+            this.pResidents.TabIndex = 8;
+            // 
+            // lblTResidents
+            // 
+            this.lblTResidents.AutoSize = true;
+            this.lblTResidents.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTResidents.Location = new System.Drawing.Point(55, 58);
+            this.lblTResidents.Name = "lblTResidents";
+            this.lblTResidents.Size = new System.Drawing.Size(0, 29);
+            this.lblTResidents.TabIndex = 6;
+            // 
+            // pUsers
+            // 
+            this.pUsers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pUsers.Controls.Add(this.lblTUsers);
+            this.pUsers.Controls.Add(this.lblUsers);
+            this.pUsers.Location = new System.Drawing.Point(234, 203);
+            this.pUsers.Name = "pUsers";
+            this.pUsers.Size = new System.Drawing.Size(157, 131);
+            this.pUsers.TabIndex = 9;
+            // 
+            // lblTUsers
+            // 
+            this.lblTUsers.AutoSize = true;
+            this.lblTUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTUsers.Location = new System.Drawing.Point(55, 58);
+            this.lblTUsers.Name = "lblTUsers";
+            this.lblTUsers.Size = new System.Drawing.Size(0, 29);
+            this.lblTUsers.TabIndex = 6;
+            // 
+            // lblUsers
+            // 
+            this.lblUsers.AutoSize = true;
+            this.lblUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.Location = new System.Drawing.Point(14, 18);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(90, 20);
+            this.lblUsers.TabIndex = 4;
+            this.lblUsers.Text = "Total Users";
+            // 
+            // mcCal
+            // 
+            this.mcCal.Location = new System.Drawing.Point(491, 203);
+            this.mcCal.Name = "mcCal";
+            this.mcCal.TabIndex = 10;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 530);
+            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.Controls.Add(this.mcCal);
+            this.Controls.Add(this.pUsers);
+            this.Controls.Add(this.pResidents);
+            this.Controls.Add(this.pAppartments);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.pbBanner);
@@ -286,6 +405,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).EndInit();
+            this.pAppartments.ResumeLayout(false);
+            this.pAppartments.PerformLayout();
+            this.pResidents.ResumeLayout(false);
+            this.pResidents.PerformLayout();
+            this.pUsers.ResumeLayout(false);
+            this.pUsers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +445,16 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.Label lblResidents;
+        private System.Windows.Forms.Label lblApartments;
+        private System.Windows.Forms.Label lblTAppartments;
+        private System.Windows.Forms.Panel pAppartments;
+        private System.Windows.Forms.Panel pResidents;
+        private System.Windows.Forms.Label lblTResidents;
+        private System.Windows.Forms.Panel pUsers;
+        private System.Windows.Forms.Label lblTUsers;
+        private System.Windows.Forms.Label lblUsers;
+        private System.Windows.Forms.MonthCalendar mcCal;
     }
 }
