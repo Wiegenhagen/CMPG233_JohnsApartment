@@ -12,14 +12,14 @@ using System.Text.RegularExpressions;
 
 namespace Group_26_Johns_RealEstate_Management_System
 {
-    public partial class FormCreateAccount : Form
+    public partial class FormCreateNewAccount : Form
     {
         //Global variables, sql connection and components
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlDataAdapter adapter;
         public Boolean username, passwrd;
 
-        public FormCreateAccount()
+        public FormCreateNewAccount()
         {
             InitializeComponent();  //Initialize
             StyleInitialization();
@@ -60,12 +60,8 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                                         conn.Close();
 
-                                        MessageBox.Show("Account Create Successfully");  //Display message
-
-                                        FormLogin account = new FormLogin();  //move to login form
-                                        this.Close();
-                                        account.Show();
-
+                                        MessageBox.Show("Account Created Successfully");  //Display message
+                                        this.Close();  //close form
                                     }
                                     else  //Passwords not matching
                                     {
@@ -96,12 +92,12 @@ namespace Group_26_Johns_RealEstate_Management_System
                     {
                         epUsername.SetError(txtUsername, "Username Required");  //Display message
                         txtUsername.Focus();
-                    }   
+                    }
                 }
                 else  //Never entered username
                 {
                     epUsername.SetError(txtUsername, "Please enter your username");  //display message, reset contorols
-                } 
+                }
             }
             catch (Exception er)  //Catch exceptions
             {
@@ -111,9 +107,12 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void lblCancel_Click(object sender, EventArgs e)  //cancel account creation
         {
-            FormLogin account = new FormLogin();  //move to login form
             this.Close();
-            account.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)  //exit form
+        {
+            this.Close();
         }
 
         protected void txtUsername_SetText()  //set style for username textbox
@@ -124,7 +123,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void txtUsername_Enter(object sender, EventArgs e)  //set style for username textbox
         {
-            if(txtUsername.ForeColor == Color.Black)
+            if (txtUsername.ForeColor == Color.Black)
                 return;
             txtUsername.Text = "";
             txtUsername.ForeColor = Color.Black;
@@ -138,7 +137,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void txtPassword_Enter(object sender, EventArgs e)  //set style for password textbox
         {
-            if(txtPassword.ForeColor == Color.Black)
+            if (txtPassword.ForeColor == Color.Black)
                 return;
             txtPassword.Text = "";
             txtPassword.ForeColor = Color.Black;
@@ -152,11 +151,12 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void txtConfirmPassword_Enter(object sender, EventArgs e)  //set style confirm password textbox
         {
-            if(txtConfirmPassword.ForeColor == Color.Black)
+            if (txtConfirmPassword.ForeColor == Color.Black)
                 return;
             txtConfirmPassword.Text = "";
             txtConfirmPassword.ForeColor = Color.Black;
         }
+
 
         private void lblCancel_MouseEnter(object sender, EventArgs e)  //set style for Cancel label
         {
@@ -178,12 +178,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             txtConfirmPassword_SetText();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)  //set style for username textbox
+        private void txtUsername_TextChanged_1(object sender, EventArgs e)  //set style for username textbox
         {
             username = true;
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)  //set style for password textbox
+        private void txtPassword_TextChanged_1(object sender, EventArgs e)  //set style for password textbox
         {
             passwrd = true;
             PasswordInitialization();
@@ -199,11 +199,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             }
         }
 
-        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)  //set style for confirm password textbox
+        private void txtConfirmPassword_TextChanged_1(object sender, EventArgs e)  //set style for confirm password textbox
         {
             ConfirmPasswordInitialization();
         }
-
 
         private void PasswordInitialization()  //set password textbox style
         {
@@ -213,11 +212,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private void ConfirmPasswordInitialization()  //set password textbox style
         {
             txtConfirmPassword.PasswordChar = '*';
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)  //exit program
-        {
-            this.Close();
         }
 
         private bool validatePass(string pass, out string err)  //password validation method
