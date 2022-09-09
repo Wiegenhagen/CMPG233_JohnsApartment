@@ -17,7 +17,9 @@ namespace Group_26_Johns_RealEstate_Management_System
         //Global variables, sql connection and components
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlDataAdapter adapter;
-        public Boolean username, passwrd;
+        public SqlDataReader dReader;
+        public SqlCommand comm;
+        public bool username, passwrd;
 
         public FormCreateNewAccount()
         {
@@ -37,55 +39,65 @@ namespace Group_26_Johns_RealEstate_Management_System
                 {
                     if (txtUsername.Text != "")
                     {
-                        if (passwrd)  //Test if password is entered
+                        if (ValidateUsername(txtUsername.Text))  //validate username
                         {
-                            if (txtPassword.Text != "")
+                            if (passwrd)  //Test if password is entered
                             {
-                                String errorMg;  //create a error message string
-                                if (validatePass(txtPassword.Text, out errorMg))    //validate all password categories
+                                if (txtPassword.Text != "")
                                 {
-                                    if (txtPassword.Text == txtConfirmPassword.Text)  //Test if passwords match
+                                    String errorMg;  //create a error message string
+                                    if (validatePass(txtPassword.Text, out errorMg))    //validate all password categories
                                     {
-                                        string username = txtUsername.Text;
-                                        string password = txtConfirmPassword.Text;  //Assign password
-                                        string passHash = GenerateHash(password);  //GenerateHash method
+                                        if (txtPassword.Text == txtConfirmPassword.Text)  //Test if passwords match
+                                        {
+                                            string username = txtUsername.Text;
+                                            string password = txtConfirmPassword.Text;  //Assign password
+                                            string passHash = GenerateHash(password);  //GenerateHash method
 
-                                        conn.Open();  //add username and password to database
+                                            conn.Open();  //add username and password to database
 
-                                        SqlCommand sqlinsert = new SqlCommand($"INSERT INTO ADMINISTRATOR (Username,Password) VALUES ('{username}','{passHash}')", conn);
-                                        adapter = new SqlDataAdapter();
+                                            SqlCommand sqlinsert = new SqlCommand($"INSERT INTO ADMINISTRATOR (Username,Password) VALUES ('{username}','{passHash}')", conn);
+                                            adapter = new SqlDataAdapter();
 
-                                        adapter.InsertCommand = sqlinsert;
-                                        adapter.InsertCommand.ExecuteNonQuery();
+                                            adapter.InsertCommand = sqlinsert;
+                                            adapter.InsertCommand.ExecuteNonQuery();
 
-                                        conn.Close();
+                                            conn.Close();
 
-                                        MessageBox.Show("Account Created Successfully");  //Display message
-                                        this.Close();  //close form
+                                            MessageBox.Show("Account Created Successfully");  //Display message
+                                            this.Close();  //close form
+                                        }
+                                        else  //Passwords not matching
+                                        {
+                                            epConfirmPassword.SetError(txtConfirmPassword, "Password do not match");  //Display message, reset contorols
+                                            txtConfirmPassword.Text = "";
+                                            txtConfirmPassword.Focus();
+                                        }
                                     }
-                                    else  //Passwords not matching
+                                    else  //incorrect passwors structure
                                     {
-                                        epConfirmPassword.SetError(txtConfirmPassword, "Password do not match");  //Display message, reset contorols
-                                        txtConfirmPassword.Text = "";
-                                        txtConfirmPassword.Focus();
+                                        epPassword.SetError(txtPassword, errorMg);  //Display message
+                                        txtPassword.Focus();
+                                        txtPassword.Text = "";
                                     }
                                 }
-                                else  //incorrect passwors structure
+                                else  //No password enetered
                                 {
-                                    epPassword.SetError(txtPassword, errorMg);  //Display message
+                                    epPassword.SetError(txtPassword, "Password Required");  //Display message
                                     txtPassword.Focus();
-                                    txtPassword.Text = "";
                                 }
                             }
-                            else  //No password enetered
+                            else  //Never enetered password 
                             {
-                                epPassword.SetError(txtPassword, "Password Required");  //Display message
-                                txtPassword.Focus();
+                                epPassword.SetError(txtPassword, "Pleaase enter your password");  //display message, reset contorols
                             }
                         }
-                        else  //Never enetered password 
+                        else  //Invalid username entered
                         {
-                            epPassword.SetError(txtPassword, "Pleaase enter your password");  //display message, reset contorols
+                            epUsername.SetError(txtUsername, "Invalid username" + "\nPlease try a different username;");  //Display message
+                            txtUsername.Text = "";
+                            ResetErrorStyles();
+                            txtUsername.Focus();
                         }
                     }
                     else  //No username entered
@@ -212,6 +224,55 @@ namespace Group_26_Johns_RealEstate_Management_System
         private void ConfirmPasswordInitialization()  //set password textbox style
         {
             txtConfirmPassword.PasswordChar = '*';
+        }
+
+        private void ResetErrorStyles()  //reset password styles
+        {
+            txtPassword.Text = "Password";
+            txtConfirmPassword.Text = "Confirm Password";
+            txtPassword.PasswordChar = '\0';
+            txtConfirmPassword.PasswordChar = '\0';
+            this.txtPassword.Enter += new EventHandler(txtPassword_Enter);
+            txtPassword_SetText();
+            this.txtConfirmPassword.Enter += new EventHandler(txtConfirmPassword_Enter);
+            txtConfirmPassword_SetText();
+            epPassword.SetError(txtPassword, "");
+        }
+
+        private bool ValidateUsername(string username)  //username validation method
+        {
+            string[] usernames = new string[100];  //create array and variables
+            int count = 0;
+
+            try  //exception handeling
+            {
+                conn.Open();  //select usernames
+
+                comm = new SqlCommand($"SELECT Username FROM ADMINISTRATOR", conn);
+                dReader = comm.ExecuteReader();
+
+                while (dReader.Read())  //add usernames to array
+                {
+                    usernames[count] = dReader.GetValue(0).ToString();
+                    count++;
+                }
+
+                conn.Close();
+            }
+            catch (SqlException error)  //catch exceptions
+            {
+                MessageBox.Show(error.Message);
+            }
+
+
+            for (int i = 0; i < count; i++)  //validate username
+            {
+                if (username == usernames[i])
+                {
+                    return false;  //return valse
+                }
+            }
+            return true;  //return true
         }
 
         private bool validatePass(string pass, out string err)  //password validation method
