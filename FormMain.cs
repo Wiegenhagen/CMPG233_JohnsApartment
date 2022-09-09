@@ -12,6 +12,9 @@ namespace Group_26_Johns_RealEstate_Management_System
 {
     public partial class FormMain : Form
     {
+        //Global variables
+        public bool chg, dlt;
+
         public FormMain()
         {
             InitializeComponent();
@@ -46,6 +49,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             FormUsers change = new FormUsers();
             change.ShowDialog();
+            chg = true;
         }
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)  //add new user
@@ -56,7 +60,9 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private void deleteAccountToolStripMenuItem_Click(object sender, EventArgs e)  //delete a user
         {
-
+            FormUsers change = new FormUsers();
+            change.ShowDialog();
+            dlt = true;
         }
     }
 }
