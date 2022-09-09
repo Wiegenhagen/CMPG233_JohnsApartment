@@ -60,6 +60,8 @@ namespace Group_26_Johns_RealEstate_Management_System
 
                                         conn.Close();
 
+                                        MessageBox.Show("Account Create Successfully");  //Display message
+
                                         FormLogin account = new FormLogin();  //move to login form
                                         this.Close();
                                         account.Show();
@@ -213,7 +215,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             txtConfirmPassword.PasswordChar = '*';
         }
 
-
+        private void btnExit_Click(object sender, EventArgs e)  //exit program
+        {
+            this.Close();
+        }
 
         private bool validatePass(string pass, out string err)  //password validation method
         {

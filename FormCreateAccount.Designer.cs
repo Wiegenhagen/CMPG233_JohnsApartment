@@ -40,6 +40,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
             this.epConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
@@ -58,7 +59,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panelContainer.Location = new System.Drawing.Point(285, 88);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(231, 241);
-            this.panelContainer.TabIndex = 0;
+            this.panelContainer.TabIndex = 1;
             // 
             // lblCancel
             // 
@@ -130,12 +131,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.epConfirmPassword.ContainerControl = this;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(713, 415);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panelContainer);
             this.Name = "FormCreateAccount";
             this.Text = "FormCreateAccount";
@@ -160,5 +172,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ErrorProvider epUsername;
         private System.Windows.Forms.Label lblCancel;
         private System.Windows.Forms.ErrorProvider epConfirmPassword;
+        private System.Windows.Forms.Button btnExit;
     }
 }
