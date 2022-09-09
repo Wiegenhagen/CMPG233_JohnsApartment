@@ -67,7 +67,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panel1.Location = new System.Drawing.Point(272, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 244);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // lblCreateNewAccount
             // 
@@ -123,7 +123,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnExit.Location = new System.Drawing.Point(713, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 0;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
