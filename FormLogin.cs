@@ -16,7 +16,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         //Global variables, sql connection and components
         public SqlConnection conn = new SqlConnection(@"Data Source=ec2-18-224-139-30.us-east-2.compute.amazonaws.com;User ID=Johns;Password=adminUser1!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlCommand comm;
-        public Boolean username, passwrd;
+        public bool username, passwrd;
         public string name;
 
         public FormLogin()
