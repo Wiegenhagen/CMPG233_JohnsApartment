@@ -32,140 +32,186 @@ namespace Group_26_Johns_RealEstate_Management_System
         public Boolean furnished;
         private void AddApartBtn_Click(object sender, EventArgs e)
         {
-            String ResID = cbResName.SelectedIndex.ToString();
-            String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
-            if(rbYes.Checked)
+            try
             {
-                furnished = true;
+                String ResID = cbResName.SelectedIndex.ToString();
+                String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
+                if (rbYes.Checked)
+                {
+                    furnished = true;
+                }
+                if (rbNo.Checked)
+                {
+                    furnished = false;
+                }
+                int ApartNumber = Convert.ToInt32(ApartNumtxt.Text);
+
+                con.Open();
+                SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResID}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
+
+                adapter = new SqlDataAdapter();
+
+                adapter.InsertCommand = comm;
+                adapter.InsertCommand.ExecuteNonQuery();
+
+                con.Close();
             }
-            if(rbNo.Checked)
+            catch (SqlException error)
             {
-                furnished = false;
+                MessageBox.Show(error.Message);
             }
-            int ApartNumber = Convert.ToInt32(ApartNumtxt.Text);
 
-            con.Open();
-            SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResID}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
-
-            adapter = new SqlDataAdapter();
-
-            adapter.InsertCommand = comm;
-            adapter.InsertCommand.ExecuteNonQuery();
-
-            con.Close();
-
-            loadResComboBox();
-            loadAprtIDComboBox();
-            loadUpdateResComboBox();
-            loadDeletAprtIDComboBox();
+            this.Close();
 
         }
         private void UpdateAprtbtn_Click(object sender, EventArgs e)
         {
-            String AprtID = UpdateAprtcb.SelectedIndex.ToString();
-            String ResID = UpdateRescb.SelectedIndex.ToString();
-            String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
-            if (rbUpdateYes.Checked)
+            try
             {
-                furnished = true;
+                String AprtID = UpdateAprtcb.SelectedIndex.ToString();
+                String ResID = UpdateRescb.SelectedIndex.ToString();
+                String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
+                if (rbUpdateYes.Checked)
+                {
+                    furnished = true;
+                }
+                if (rbUpdateNo.Checked)
+                {
+                    furnished = false;
+                }
+                int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
+                con.Open();
+                SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_ID = @AprtID", con);
+                comm.Parameters.AddWithValue("@AprtID", AprtID);
+                comm.Parameters.AddWithValue("@ResID", ResID);
+                comm.Parameters.AddWithValue("@OccuDate", OccuDate);
+                comm.Parameters.AddWithValue("@Furn", furnished);
+                comm.Parameters.AddWithValue("AprtNum", ApartNumber);
+                comm.ExecuteNonQuery();
+                con.Close();
             }
-            if (rbUpdateNo.Checked)
+            catch (SqlException error)
             {
-                furnished = false;
+                MessageBox.Show(error.Message);
             }
-            int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
-            con.Open();
-            SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_ID = @AprtID", con);
-            comm.Parameters.AddWithValue("@AprtID", AprtID);
-            comm.Parameters.AddWithValue("@ResID", ResID);
-            comm.Parameters.AddWithValue("@OccuDate", OccuDate);
-            comm.Parameters.AddWithValue("@Furn", furnished);
-            comm.Parameters.AddWithValue("AprtNum", ApartNumber);
-            comm.ExecuteNonQuery();
-            con.Close();
-            loadResComboBox();
-            loadAprtIDComboBox();
-            loadUpdateResComboBox();
-            loadDeletAprtIDComboBox();
+
+            this.Close();
         }
         private void DeleteAprtbtn_Click(object sender, EventArgs e)
         {
-            String AprtID = DeleteAprtcb.SelectedIndex.ToString();
-            con.Open();
-            SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_ID = @AprtID", con);
-            comm.Parameters.AddWithValue("@AprtID", AprtID);
-            comm.ExecuteNonQuery();
+            try
+            {
+                String AprtID = DeleteAprtcb.SelectedIndex.ToString();
+                con.Open();
+                SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_ID = @AprtID", con);
+                comm.Parameters.AddWithValue("@AprtID", AprtID);
+                comm.ExecuteNonQuery();
 
-            con.Close();
+                con.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
 
-            loadResComboBox();
-            loadAprtIDComboBox();
-            loadUpdateResComboBox();
+            
             loadDeletAprtIDComboBox();
-
+            this.Close();
         }
         private void loadResComboBox()
         {
-
-            con.Open();
-            SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
-            reader = comm.ExecuteReader();
-            cbResName.Items.Clear();
-            cbResName.Items.Add("ID   Name");
-
-            while (reader.Read())
+            try
             {
-                cbResName.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
-            }
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
+                reader = comm.ExecuteReader();
+                cbResName.Items.Clear();
+                cbResName.Items.Add("ID   Name");
 
-            con.Close();
+                while (reader.Read())
+                {
+                    cbResName.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
+                }
+
+                con.Close();
+            }
+            catch(SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            
         }
         private void loadUpdateResComboBox()
         {
-
-            con.Open();
-            SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
-            reader = comm.ExecuteReader();
-            UpdateRescb.Items.Clear();
-            UpdateRescb.Items.Add("ID   Name");
-
-            while (reader.Read())
+            try
             {
-                UpdateRescb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
-            }
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
+                reader = comm.ExecuteReader();
+                UpdateRescb.Items.Clear();
+                UpdateRescb.Items.Add("ID   Name");
 
-            con.Close();
+                while (reader.Read())
+                {
+                    UpdateRescb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
+                }
+
+                con.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            
         }
         private void loadAprtIDComboBox()
         {
-            con.Open();
-            SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
-            reader = comm.ExecuteReader();
-            UpdateAprtcb.Items.Clear();
-            UpdateAprtcb.Items.Add("ID");
-
-            while (reader.Read())
+            try
             {
-                UpdateAprtcb.Items.Add(reader.GetValue(0));
-            }
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
+                reader = comm.ExecuteReader();
+                UpdateAprtcb.Items.Clear();
+                UpdateAprtcb.Items.Add("ID");
 
-            con.Close();
+                while (reader.Read())
+                {
+                    UpdateAprtcb.Items.Add(reader.GetValue(0));
+                }
+
+                con.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            
         }
         private void loadDeletAprtIDComboBox()
         {
-            con.Open();
-            SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
-            reader = comm.ExecuteReader();
-            DeleteAprtcb.Items.Clear();
-            DeleteAprtcb.Items.Add("ID    Apartment Number");
-
-            while (reader.Read())
+            try
             {
-                DeleteAprtcb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(4));
-            }
+                con.Open();
+                SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
+                reader = comm.ExecuteReader();
+                DeleteAprtcb.Items.Clear();
+                DeleteAprtcb.Items.Add("ID    Apartment Number");
 
-            con.Close();
+                while (reader.Read())
+                {
+                    DeleteAprtcb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(4));
+                }
+
+                con.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+            
         }
+        
+
 
 
     }
