@@ -181,7 +181,11 @@ namespace Group_26_Johns_RealEstate_Management_System
 
 
 
-        private void btnSkip_Click(object sender, EventArgs e)  //temp button  (DELETE ME)
+
+
+
+
+        private void btnSkip_Click(object sender, EventArgs e)  //temp button  (DELETE ME) **
         {
             FormMain main = new FormMain();
             this.Hide();
