@@ -79,10 +79,10 @@ namespace Group_26_Johns_RealEstate_Management_System
         private void btnSave_Click(object sender, EventArgs e)
         {
             string myfile;
-            saveFileDialog1.InitialDirectory = @"c:\";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            saveFDApartments.InitialDirectory = @"c:\";
+            if (saveFDApartments.ShowDialog() == DialogResult.OK)
             {
-                myfile = saveFileDialog1.FileName;
+                myfile = saveFDApartments.FileName;
                 StreamWriter output = File.CreateText(myfile);
                 output.WriteLine("\t\t\t\tReport of Appartments\n");
                 for (int i = 0; i < lstbxApartReport.Items.Count; i++)

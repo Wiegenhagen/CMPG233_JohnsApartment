@@ -183,6 +183,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.residentsReportToolStripMenuItem.Name = "residentsReportToolStripMenuItem";
             this.residentsReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.residentsReportToolStripMenuItem.Text = "Residents Report";
+            this.residentsReportToolStripMenuItem.Click += new System.EventHandler(this.residentsReportToolStripMenuItem_Click);
             // 
             // appartmentsReportToolStripMenuItem
             // 
@@ -266,7 +267,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pbBanner.Image = ((System.Drawing.Image)(resources.GetObject("pbBanner.Image")));
             this.pbBanner.InitialImage = null;
             this.pbBanner.Location = new System.Drawing.Point(107, 60);
-            this.pbBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBanner.Margin = new System.Windows.Forms.Padding(4);
             this.pbBanner.Name = "pbBanner";
             this.pbBanner.Size = new System.Drawing.Size(624, 116);
             this.pbBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -335,7 +336,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pAppartments.Controls.Add(this.lblApartments);
             this.pAppartments.Controls.Add(this.lblTAppartments);
             this.pAppartments.Location = new System.Drawing.Point(28, 250);
-            this.pAppartments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pAppartments.Margin = new System.Windows.Forms.Padding(4);
             this.pAppartments.Name = "pAppartments";
             this.pAppartments.Size = new System.Drawing.Size(209, 161);
             this.pAppartments.TabIndex = 7;
@@ -346,7 +347,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pResidents.Controls.Add(this.lblTResidents);
             this.pResidents.Controls.Add(this.lblResidents);
             this.pResidents.Location = new System.Drawing.Point(28, 471);
-            this.pResidents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pResidents.Margin = new System.Windows.Forms.Padding(4);
             this.pResidents.Name = "pResidents";
             this.pResidents.Size = new System.Drawing.Size(209, 161);
             this.pResidents.TabIndex = 8;
@@ -367,7 +368,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pUsers.Controls.Add(this.lblTUsers);
             this.pUsers.Controls.Add(this.lblUsers);
             this.pUsers.Location = new System.Drawing.Point(312, 250);
-            this.pUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pUsers.Margin = new System.Windows.Forms.Padding(4);
             this.pUsers.Name = "pUsers";
             this.pUsers.Size = new System.Drawing.Size(209, 161);
             this.pUsers.TabIndex = 9;
@@ -414,7 +415,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Controls.Add(this.pbBanner);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);

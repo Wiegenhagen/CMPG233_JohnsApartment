@@ -36,7 +36,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnBack = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFDApartments = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // lblApartTitle
@@ -107,6 +107,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Blue;
             this.btnSave.Location = new System.Drawing.Point(630, 504);
@@ -146,6 +147,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ListBox lstbxApart;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFDApartments;
     }
 }
