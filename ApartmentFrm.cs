@@ -69,7 +69,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             try
             {
                 
-                String AprtNm = UpdateAprtcb.SelectedIndex.ToString();
+                String AprtNom = UpdateAprtcb.SelectedIndex.ToString();
                 String ResIDNm = UpdateRescb.SelectedIndex.ToString();
                 String OccuDate = UpdateCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbUpdateYes.Checked)
@@ -83,7 +83,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
                 con.Open();
                 SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_Number = @AprtNm", con);
-                comm.Parameters.AddWithValue("@AprtNm", AprtNm);
+                comm.Parameters.AddWithValue("@AprtNm", AprtNom);
                 comm.Parameters.AddWithValue("@ResID", ResIDNm);
                 comm.Parameters.AddWithValue("@OccuDate", OccuDate);
                 comm.Parameters.AddWithValue("@Furn", furnished);
