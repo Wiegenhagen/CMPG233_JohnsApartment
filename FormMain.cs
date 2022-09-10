@@ -167,5 +167,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             AparmentReportForm apartForm = new AparmentReportForm();
             apartForm.ShowDialog();
         }
+
+        private void residentsReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResidentsReportForm resForm = new ResidentsReportForm();
+            resForm.ShowDialog();
+        }
     }
 }
