@@ -42,11 +42,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.cbResName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ApartIDtxt = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.UpdateAprtcb = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UpdateAprtbtn = new System.Windows.Forms.Button();
             this.UpdateAprtNumtxt = new System.Windows.Forms.TextBox();
@@ -58,8 +57,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label9 = new System.Windows.Forms.Label();
             this.UpdateRescb = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.UpdateAprtcb = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DeleteAprtcb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,9 +66,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,8 +99,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.ApartIDtxt);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.AddApartBtn);
             this.panel1.Controls.Add(this.ApartNumtxt);
             this.panel1.Controls.Add(this.label4);
@@ -131,7 +127,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // ApartNumtxt
             // 
-            this.ApartNumtxt.Location = new System.Drawing.Point(230, 363);
+            this.ApartNumtxt.Location = new System.Drawing.Point(252, 38);
             this.ApartNumtxt.Name = "ApartNumtxt";
             this.ApartNumtxt.Size = new System.Drawing.Size(100, 20);
             this.ApartNumtxt.TabIndex = 9;
@@ -140,7 +136,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 363);
+            this.label4.Location = new System.Drawing.Point(94, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 16);
             this.label4.TabIndex = 8;
@@ -214,35 +210,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label1.TabIndex = 1;
             this.label1.Text = "Select resident from list below:";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(605, 476);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Delete Apartment";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(112, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Apartment ID:";
-            // 
-            // ApartIDtxt
-            // 
-            this.ApartIDtxt.Location = new System.Drawing.Point(230, 42);
-            this.ApartIDtxt.Name = "ApartIDtxt";
-            this.ApartIDtxt.Size = new System.Drawing.Size(100, 20);
-            this.ApartIDtxt.TabIndex = 12;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
@@ -277,15 +244,33 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panel2.Size = new System.Drawing.Size(465, 452);
             this.panel2.TabIndex = 1;
             // 
+            // UpdateAprtcb
+            // 
+            this.UpdateAprtcb.FormattingEnabled = true;
+            this.UpdateAprtcb.Location = new System.Drawing.Point(274, 47);
+            this.UpdateAprtcb.Name = "UpdateAprtcb";
+            this.UpdateAprtcb.Size = new System.Drawing.Size(121, 21);
+            this.UpdateAprtcb.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(158, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 16);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Update Apartment";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(68, 48);
+            this.label6.Location = new System.Drawing.Point(42, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 16);
+            this.label6.Size = new System.Drawing.Size(217, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Apartment, to update, ID:";
+            this.label6.Text = "Apartment, to update, Number:";
             // 
             // UpdateAprtbtn
             // 
@@ -362,7 +347,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(312, 16);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Select the date when new resident moves in:";
+            this.label9.Text = "Select the new date when resident moves in:";
             // 
             // UpdateRescb
             // 
@@ -382,23 +367,17 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label10.TabIndex = 1;
             this.label10.Text = "Select resident from list below:";
             // 
-            // label11
+            // tabPage3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(158, 11);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Update Apartment";
-            // 
-            // UpdateAprtcb
-            // 
-            this.UpdateAprtcb.FormattingEnabled = true;
-            this.UpdateAprtcb.Location = new System.Drawing.Point(252, 47);
-            this.UpdateAprtcb.Name = "UpdateAprtcb";
-            this.UpdateAprtcb.Size = new System.Drawing.Size(121, 21);
-            this.UpdateAprtcb.TabIndex = 14;
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(605, 476);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Delete Apartment";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -465,10 +444,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -491,8 +470,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ComboBox cbResName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AddApartBtn;
-        private System.Windows.Forms.TextBox ApartIDtxt;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox UpdateAprtcb;

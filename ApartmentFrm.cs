@@ -34,7 +34,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try
             {
-                String ResID = cbResName.SelectedIndex.ToString();
+                String ResIDNm = cbResName.SelectedIndex.ToString();
                 String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbYes.Checked)
                 {
@@ -47,7 +47,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 int ApartNumber = Convert.ToInt32(ApartNumtxt.Text);
 
                 con.Open();
-                SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResID}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
+                SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResIDNm}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
 
                 adapter = new SqlDataAdapter();
 
@@ -68,9 +68,10 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try
             {
-                String AprtID = UpdateAprtcb.SelectedIndex.ToString();
-                String ResID = UpdateRescb.SelectedIndex.ToString();
-                String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
+                
+                String AprtNm = UpdateAprtcb.SelectedIndex.ToString();
+                String ResIDNm = UpdateRescb.SelectedIndex.ToString();
+                String OccuDate = UpdateCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbUpdateYes.Checked)
                 {
                     furnished = true;
@@ -81,9 +82,9 @@ namespace Group_26_Johns_RealEstate_Management_System
                 }
                 int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
                 con.Open();
-                SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_ID = @AprtID", con);
-                comm.Parameters.AddWithValue("@AprtID", AprtID);
-                comm.Parameters.AddWithValue("@ResID", ResID);
+                SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_Number = @AprtNm", con);
+                comm.Parameters.AddWithValue("@AprtNm", AprtNm);
+                comm.Parameters.AddWithValue("@ResID", ResIDNm);
                 comm.Parameters.AddWithValue("@OccuDate", OccuDate);
                 comm.Parameters.AddWithValue("@Furn", furnished);
                 comm.Parameters.AddWithValue("AprtNum", ApartNumber);
@@ -101,10 +102,10 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try
             {
-                String AprtID = DeleteAprtcb.SelectedIndex.ToString();
+                String AprtNm = DeleteAprtcb.SelectedIndex.ToString();
                 con.Open();
-                SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_ID = @AprtID", con);
-                comm.Parameters.AddWithValue("@AprtID", AprtID);
+                SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_ID = @AprtNm", con);
+                comm.Parameters.AddWithValue("@AprtNm", AprtNm);
                 comm.ExecuteNonQuery();
 
                 con.Close();
@@ -126,11 +127,11 @@ namespace Group_26_Johns_RealEstate_Management_System
                 SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
                 reader = comm.ExecuteReader();
                 cbResName.Items.Clear();
-                cbResName.Items.Add("ID   Name");
+                cbResName.Items.Add("ID Number");
 
                 while (reader.Read())
                 {
-                    cbResName.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
+                    cbResName.Items.Add(reader.GetValue(5));
                 }
 
                 con.Close();
@@ -149,11 +150,11 @@ namespace Group_26_Johns_RealEstate_Management_System
                 SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
                 reader = comm.ExecuteReader();
                 UpdateRescb.Items.Clear();
-                UpdateRescb.Items.Add("ID   Name");
+                UpdateRescb.Items.Add("ID Number");
 
                 while (reader.Read())
                 {
-                    UpdateRescb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(2));
+                    UpdateRescb.Items.Add(reader.GetValue(5));
                 }
 
                 con.Close();
@@ -172,11 +173,11 @@ namespace Group_26_Johns_RealEstate_Management_System
                 SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
                 reader = comm.ExecuteReader();
                 UpdateAprtcb.Items.Clear();
-                UpdateAprtcb.Items.Add("ID");
+                UpdateAprtcb.Items.Add("Apartment Number");
 
                 while (reader.Read())
                 {
-                    UpdateAprtcb.Items.Add(reader.GetValue(0));
+                    UpdateAprtcb.Items.Add(reader.GetValue(4));
                 }
 
                 con.Close();
@@ -195,11 +196,11 @@ namespace Group_26_Johns_RealEstate_Management_System
                 SqlCommand comm = new SqlCommand("SELECT * FROM dbo.APARTMENT", con);
                 reader = comm.ExecuteReader();
                 DeleteAprtcb.Items.Clear();
-                DeleteAprtcb.Items.Add("ID    Apartment Number");
+                DeleteAprtcb.Items.Add("Apartment Number");
 
                 while (reader.Read())
                 {
-                    DeleteAprtcb.Items.Add(reader.GetValue(0) + "    " + reader.GetValue(4));
+                    DeleteAprtcb.Items.Add(reader.GetValue(4));
                 }
 
                 con.Close();
