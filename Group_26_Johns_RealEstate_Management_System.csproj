@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AparmentReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AparmentReportForm.Designer.cs">
+      <DependentUpon>AparmentReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreateNewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AparmentReportForm.resx">
+      <DependentUpon>AparmentReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreateNewAccount.resx">
       <DependentUpon>FormCreateNewAccount.cs</DependentUpon>
     </EmbeddedResource>
