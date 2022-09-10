@@ -24,5 +24,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             DateTime today = DateTime.Today;
             lblDate.Text = today.ToString("dd MMMM yyy");
         }
+
+        private void addNewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ApartmentFrm addAfrm = new ApartmentFrm();
+            addAfrm.ShowDialog();
+        }
     }
 }
