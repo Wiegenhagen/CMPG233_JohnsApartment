@@ -189,5 +189,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             GenericReportForm fullForm = new GenericReportForm(query, "Full Report Of Johns Apartments");
             fullForm.ShowDialog();
         }
+
+        private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAddNewResident newresident = new FormAddNewResident();
+            newresident.ShowDialog();
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRemoveResident removeresident = new FormRemoveResident();
+            removeresident.ShowDialog();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEditResident editresident = new FormEditResident();
+            editresident.ShowDialog();
+        }
     }
 }
