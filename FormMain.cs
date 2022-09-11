@@ -161,5 +161,23 @@ namespace Group_26_Johns_RealEstate_Management_System
 
             return count;  //return count
         }
+
+        private void appartmentsReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AparmentReportForm apartForm = new AparmentReportForm();
+            apartForm.ShowDialog();
+        }
+
+        private void residentsReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResidentsReportForm resForm = new ResidentsReportForm();
+            resForm.ShowDialog();
+        }
+
+        private void fullReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FullReportForm fullForm = new FullReportForm();
+            fullForm.ShowDialog();
+        }
     }
 }
