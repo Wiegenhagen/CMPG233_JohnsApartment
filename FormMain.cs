@@ -173,5 +173,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             ResidentsReportForm resForm = new ResidentsReportForm();
             resForm.ShowDialog();
         }
+
+        private void fullReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FullReportForm fullForm = new FullReportForm();
+            fullForm.ShowDialog();
+        }
     }
 }

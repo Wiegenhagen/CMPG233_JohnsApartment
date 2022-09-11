@@ -61,7 +61,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 conn.Close();//connection close
 
                 lstbxApartReport.Items.Add("Resident ID" + "\t" + "Resident Name" + "\t" + "Apartmnet No" + "\t" + "Occupation Date" + "\t\t" + "Furnished");
-                lstbxApartReport.Items.Add("===============================================================================================");
+                lstbxApartReport.Items.Add("========================================================================================");
 
 
                 for (int i = 0; i < lstbxApart.Items.Count; i++)
@@ -89,7 +89,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 {
                     output.WriteLine((string)lstbxApartReport.Items[i]);
                 }
-                output.WriteLine("\n\n\t\t\tReport was pulled on: " + DateTime.Now);
+                output.WriteLine("\n\n\t\t\t\t\tReport was pulled on: " + DateTime.Now);
                 output.Close();
 
             }
