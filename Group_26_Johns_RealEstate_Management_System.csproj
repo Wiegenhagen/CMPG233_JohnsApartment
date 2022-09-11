@@ -58,6 +58,12 @@
     <Compile Include="AparmentReportForm.Designer.cs">
       <DependentUpon>AparmentReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApartmentFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApartmentFrm.Designer.cs">
+      <DependentUpon>ApartmentFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreateNewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="AparmentReportForm.resx">
       <DependentUpon>AparmentReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApartmentFrm.resx">
+      <DependentUpon>ApartmentFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateNewAccount.resx">
       <DependentUpon>FormCreateNewAccount.cs</DependentUpon>
