@@ -29,7 +29,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         SqlCommand comm;
         SqlDataReader theReader;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnShow_Click(object sender, EventArgs e)
         {
             if (rbtnYes.Checked)
             {
@@ -41,7 +41,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 comm = new SqlCommand(sql, conn);//Command database to show
                 theReader = comm.ExecuteReader();
                 lstbxResidents.Items.Add("ID Number" + "\t" + "Resident Name" + "\t\t" + "Cell Number" + "\t" + "Account Number" + "\t" + "Branch Number");
-                lstbxResidents.Items.Add("===========================================================================================================");
+                lstbxResidents.Items.Add("========================================================================================");
                 while (theReader.Read())
                 {
                     lstbxResidents.Items.Add(theReader.GetValue(5) + "\t" + theReader.GetValue(2) + " " + theReader.GetValue(3) + "\t\t" + theReader.GetValue(4) + "\t" + theReader.GetValue(7) + "\t" + theReader.GetValue(6));
@@ -57,15 +57,18 @@ namespace Group_26_Johns_RealEstate_Management_System
                 comm = new SqlCommand(sql, conn);//Command database to show
                 theReader = comm.ExecuteReader();
                 lstbxResidents.Items.Add("ID Number" + "\t" + "Resident Name" + "\t\t" + "Cell Number" + "\t" + "Account Number" + "\t" + "Branch Number");
-                lstbxResidents.Items.Add("=================================================================================================================");
+                lstbxResidents.Items.Add("========================================================================================");
                 while (theReader.Read())
                 {
                     lstbxResidents.Items.Add(theReader.GetValue(5) + "\t" + theReader.GetValue(2) + " " + theReader.GetValue(3) + "\t\t" + theReader.GetValue(4) + "\t" + theReader.GetValue(7) + "\t" + theReader.GetValue(6));
                 }
             }
+
+            btnSave.Enabled = true;
+            rbtnYes.Checked = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             string myfile;
             saveFDResidents.InitialDirectory = @"c:\";
@@ -78,7 +81,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 {
                     output.WriteLine((string)lstbxResidents.Items[i]);
                 }
-                output.WriteLine("\n\n\t\t\tReport was pulled on: " + DateTime.Now);
+                output.WriteLine("\n\n\t\t\t\t\t\tReport was pulled on: " + DateTime.Now);
                 output.Close();
 
             }

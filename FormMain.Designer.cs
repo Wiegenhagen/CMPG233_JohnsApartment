@@ -177,6 +177,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.fullReportToolStripMenuItem.Name = "fullReportToolStripMenuItem";
             this.fullReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.fullReportToolStripMenuItem.Text = "Full Report";
+            this.fullReportToolStripMenuItem.Click += new System.EventHandler(this.fullReportToolStripMenuItem_Click);
             // 
             // residentsReportToolStripMenuItem
             // 

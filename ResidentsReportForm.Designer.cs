@@ -32,8 +32,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblResTitle = new System.Windows.Forms.Label();
             this.lstbxResidents = new System.Windows.Forms.ListBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.saveFDResidents = new System.Windows.Forms.SaveFileDialog();
             this.lblSort = new System.Windows.Forms.Label();
             this.rbtnYes = new System.Windows.Forms.RadioButton();
@@ -71,29 +71,30 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // button1
+            // btnShow
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(317, 474);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 56);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Back to Home Page";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.Blue;
+            this.btnShow.Location = new System.Drawing.Point(317, 474);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(177, 56);
+            this.btnShow.TabIndex = 3;
+            this.btnShow.Text = "Preview of Report";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Blue;
-            this.button2.Location = new System.Drawing.Point(580, 474);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 56);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Back to Home Page";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Blue;
+            this.btnSave.Location = new System.Drawing.Point(580, 474);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(177, 56);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save As";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblSort
             // 
@@ -124,8 +125,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.ClientSize = new System.Drawing.Size(781, 583);
             this.Controls.Add(this.rbtnYes);
             this.Controls.Add(this.lblSort);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lstbxResidents);
             this.Controls.Add(this.lblResTitle);
@@ -142,8 +143,8 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Label lblResTitle;
         private System.Windows.Forms.ListBox lstbxResidents;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.SaveFileDialog saveFDResidents;
         private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.RadioButton rbtnYes;
