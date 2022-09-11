@@ -31,7 +31,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddApartBtn = new System.Windows.Forms.Button();
             this.ApartNumtxt = new System.Windows.Forms.TextBox();
@@ -43,7 +42,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label2 = new System.Windows.Forms.Label();
             this.cbResName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.UpdateAprtcb = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label9 = new System.Windows.Forms.Label();
             this.UpdateRescb = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DeleteAprtcb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,10 +65,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.DeleteAprtbtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,17 +93,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Apartment";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(646, 536);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update Apartment";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -132,6 +121,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.AddApartBtn.TabIndex = 10;
             this.AddApartBtn.Text = "Add Apartment";
             this.AddApartBtn.UseVisualStyleBackColor = true;
+            this.AddApartBtn.Click += new System.EventHandler(this.AddApartBtn_Click_1);
             // 
             // ApartNumtxt
             // 
@@ -218,15 +208,16 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label1.TabIndex = 1;
             this.label1.Text = "Select resident from list below:";
             // 
-            // tabPage3
+            // tabPage2
             // 
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(646, 536);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Remove Apartment";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(646, 536);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Update Apartment";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -372,6 +363,16 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label10.TabIndex = 1;
             this.label10.Text = "Select resident from list below:";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(646, 536);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Remove Apartment";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
@@ -432,12 +433,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Text = "ApartmentFrm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

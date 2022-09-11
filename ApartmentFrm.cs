@@ -212,8 +212,9 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         }
 
+        private void AddApartBtn_Click_1(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
