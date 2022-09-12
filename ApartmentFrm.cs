@@ -124,7 +124,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             try
             {
                 con.Open();
-                SqlCommand comm = new SqlCommand("SELECT * FROM dbo.RESIDENT", con);
+                SqlCommand comm = new SqlCommand("SELECT * FROM RESIDENT", con);
                 reader = comm.ExecuteReader();
                 cbResName.Items.Clear();
                 cbResName.Items.Add("ID Number");
@@ -211,5 +211,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             }
 
         }
+
+        
     }
 }
