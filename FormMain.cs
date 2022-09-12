@@ -236,5 +236,23 @@ namespace Group_26_Johns_RealEstate_Management_System
             fullForm.ShowDialog();
 
         }
+
+        private void addNewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ApartmentFrm addnew = new ApartmentFrm();
+            addnew.Show();
+        }
+
+        private void removeAppartmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ApartmentFrm addnew = new ApartmentFrm();
+            addnew.Show();
+        }
+
+        private void editExistingAppartmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ApartmentFrm addnew = new ApartmentFrm();
+            addnew.Show();
+        }
     }
 }
