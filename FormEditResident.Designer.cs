@@ -32,7 +32,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.components = new System.ComponentModel.Container();
             this.gbEdit = new System.Windows.Forms.GroupBox();
             this.tbAccNum = new System.Windows.Forms.TextBox();
-            this.tbBranch = new System.Windows.Forms.TextBox();
             this.tbID = new System.Windows.Forms.TextBox();
             this.tbCell = new System.Windows.Forms.TextBox();
             this.tbSurname = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.epID = new System.Windows.Forms.ErrorProvider(this.components);
             this.epBranch = new System.Windows.Forms.ErrorProvider(this.components);
             this.epAccNum = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbBranch = new System.Windows.Forms.ComboBox();
             this.gbEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResidents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epName)).BeginInit();
@@ -65,8 +65,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // gbEdit
             // 
-            this.gbEdit.Controls.Add(this.tbAccNum);
             this.gbEdit.Controls.Add(this.tbBranch);
+            this.gbEdit.Controls.Add(this.tbAccNum);
             this.gbEdit.Controls.Add(this.tbID);
             this.gbEdit.Controls.Add(this.tbCell);
             this.gbEdit.Controls.Add(this.tbSurname);
@@ -90,13 +90,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tbAccNum.Name = "tbAccNum";
             this.tbAccNum.Size = new System.Drawing.Size(140, 20);
             this.tbAccNum.TabIndex = 11;
-            // 
-            // tbBranch
-            // 
-            this.tbBranch.Location = new System.Drawing.Point(157, 219);
-            this.tbBranch.Name = "tbBranch";
-            this.tbBranch.Size = new System.Drawing.Size(140, 20);
-            this.tbBranch.TabIndex = 10;
             // 
             // tbID
             // 
@@ -140,9 +133,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblBranch.AutoSize = true;
             this.lblBranch.Location = new System.Drawing.Point(21, 222);
             this.lblBranch.Name = "lblBranch";
-            this.lblBranch.Size = new System.Drawing.Size(72, 13);
+            this.lblBranch.Size = new System.Drawing.Size(66, 13);
             this.lblBranch.TabIndex = 4;
-            this.lblBranch.Text = "Branch Code:";
+            this.lblBranch.Text = "Bank Name:";
             // 
             // lblID
             // 
@@ -185,6 +178,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.dgvResidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResidents.Location = new System.Drawing.Point(357, 12);
             this.dgvResidents.Name = "dgvResidents";
+            this.dgvResidents.RowHeadersWidth = 62;
             this.dgvResidents.Size = new System.Drawing.Size(567, 325);
             this.dgvResidents.TabIndex = 2;
             // 
@@ -242,6 +236,22 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.epAccNum.ContainerControl = this;
             // 
+            // tbBranch
+            // 
+            this.tbBranch.FormattingEnabled = true;
+            this.tbBranch.Items.AddRange(new object[] {
+            "Standard Bank\t",
+            "FirstRand",
+            "Absa",
+            "NedBank",
+            "Investec ",
+            "Capitec",
+            "FNB"});
+            this.tbBranch.Location = new System.Drawing.Point(176, 219);
+            this.tbBranch.Name = "tbBranch";
+            this.tbBranch.Size = new System.Drawing.Size(121, 21);
+            this.tbBranch.TabIndex = 12;
+            // 
             // FormEditResident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,7 +282,6 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         private System.Windows.Forms.GroupBox gbEdit;
         private System.Windows.Forms.TextBox tbAccNum;
-        private System.Windows.Forms.TextBox tbBranch;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tbCell;
         private System.Windows.Forms.TextBox tbSurname;
@@ -293,5 +302,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ErrorProvider epID;
         private System.Windows.Forms.ErrorProvider epBranch;
         private System.Windows.Forms.ErrorProvider epAccNum;
+        private System.Windows.Forms.ComboBox tbBranch;
     }
 }

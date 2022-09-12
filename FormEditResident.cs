@@ -23,7 +23,8 @@ namespace Group_26_Johns_RealEstate_Management_System
         public SqlDataAdapter adapter;
         public SqlDataReader dReader;
         public DataSet ds;
-        public String branchcode, bankID;
+        public String branchcode, bank;
+        public int bankID;
 
         private void FormEditResident_Load(object sender, EventArgs e)
         {
@@ -68,26 +69,63 @@ namespace Group_26_Johns_RealEstate_Management_System
                 try
                 {
                     conn.Open(); // Enter resident details into database
+                    bank = tbBranch.Text;
 
-                    if (branchcode == "632005")
+                    if (bank == "Nedbank")
                     {
-                        bankID = "4";
+                        bankID = 1;
+                        branchcode = "198765";
                     }
-                    else if (branchcode == "250655")
+                    else if (bank == "Standard Bank")
                     {
-                        bankID = "5";
+                        bankID = 3;
+                        branchcode = "200109";
                     }
-                    else if (branchcode == "580105")
+                    else if (bank == "ABSA")
                     {
-                        bankID = "7";
+                        bankID = 4;
+                        branchcode = "198765";
+                    }
+                    else if (bank == "First Rand Bank")
+                    {
+                        bankID = 5;
+                        branchcode = "632005";
+                    }
+                    else if (bank == "Bidvest Bank")
+                    {
+                        bankID = 6;
+                        branchcode = "250655";
+                    }
+                    else if (bank == "Investec Bank")
+                    {
+                        bankID = 7;
+                        branchcode = "470010";
+                    }
+                    else if (bank == "Capitec")
+                    {
+                        bankID = 8;
+                        branchcode = "580105";
+                    }
+                    else if (bank == "African Bank")
+                    {
+                        bankID = 9;
+                        branchcode = "580105";
+                    }
+                    else if (bank == "Discovery Bank")
+                    {
+                        bankID = 10;
+                        branchcode = "580105";
                     }
 
-                    SqlCommand sqlinsert = new SqlCommand($"UPDATE RESIDENT (First_Name, Last_Name, Cell_Number, ID_Number, Branch_Code, Account_Number, Bank_ID) VALUES (@name, @surname, @cellnum, @id, '{branchcode}', @AccNum, '{bankID}') WHERE ID_Number='{tbID.Text}'", conn);
-                    sqlinsert.Parameters.AddWithValue("@name", tbName.Text);
-                    sqlinsert.Parameters.AddWithValue("@surname", tbSurname.Text);
-                    sqlinsert.Parameters.AddWithValue("@cellnum", tbCell.Text);
-                    sqlinsert.Parameters.AddWithValue("@id", tbID.Text);
-                    sqlinsert.Parameters.AddWithValue("@AccNum", tbAccNum.Text);
+                    SqlCommand sqlinsert = new SqlCommand("UPDATE dbo.RESIDENT SET First_Name=@name, Last_Name=@surname, Cell_Number=@cellnum, Bank_ID=@bankID, ID_Number=@id, Branch_Code=@branchcode, Account_Number=@AccNum WHERE ID_Number=@id2", conn);
+                    sqlinsert.Parameters.AddWithValue("@name", tbName.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@surname", tbSurname.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@cellnum", tbCell.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@id", tbID.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@AccNum", tbAccNum.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@branchcode", tbBranch.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@bankID", bankID);
+                    sqlinsert.Parameters.AddWithValue("@id2", tbID.Text ?? (object)DBNull.Value);
 
                     adapter = new SqlDataAdapter();
 

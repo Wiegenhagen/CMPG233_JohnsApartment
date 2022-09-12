@@ -17,8 +17,8 @@ namespace Group_26_Johns_RealEstate_Management_System
         public SqlDataAdapter adapter;
         public SqlDataReader dReader;
         public SqlCommand comm;
-        public String name, surname, cellnum, id, branchcode, AccNum, bankID;
-        public int contract = 0;
+        public String name, surname, cellnum, id, bank, AccNum, branchcode;
+        public int contract = 0, bankID;
 
         public FormAddNewResident()
         {
@@ -57,7 +57,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             }
             else if (tbBranch.Text == string.Empty)
             {
-                epBranch.SetError(tbBranch, "Please enter a branch code!");
+                epBranch.SetError(tbBranch, "Please choose a bank!");
             }
             else if (tbAccNum.Text == string.Empty)
             {
@@ -82,23 +82,56 @@ namespace Group_26_Johns_RealEstate_Management_System
                     surname = tbSurname.Text;
                     cellnum = tbCell.Text;
                     id = tbID.Text;
-                    branchcode = tbBranch.Text;
+                    bank = tbBranch.Text;
                     AccNum = tbAccNum.Text;
 
-                    if (branchcode == "632005")
+                    if (bank == "Nedbank")
                     {
-                        bankID = "4";
+                        bankID = 1;
+                        branchcode = "198765";
                     }
-                    else if (branchcode == "250655")
+                    else if (bank == "Standard Bank")                   
                     {
-                        bankID = "5";
+                        bankID = 3;
+                        branchcode = "200109";
                     }
-                    else if (branchcode == "580105")
+                    else if (bank == "ABSA")
                     {
-                        bankID = "7";
+                        bankID = 4;
+                        branchcode = "198765";
+                    }
+                    else if (bank == "First Rand Bank")
+                    {
+                        bankID = 5;
+                        branchcode = "632005";
+                    }
+                    else if (bank == "Bidvest Bank")
+                    {
+                        bankID = 6;
+                        branchcode = "250655";
+                    }
+                    else if (bank == "Investec Bank")
+                    {
+                        bankID = 7;
+                        branchcode = "470010";
+                    }
+                    else if (bank == "Capitec")
+                    {
+                        bankID = 8;
+                        branchcode = "580105";
+                    }
+                    else if (bank == "African Bank")
+                    {
+                        bankID = 9;
+                        branchcode = "580105";
+                    }
+                    else if (bank == "Discovery Bank")
+                    {
+                        bankID = 10;
+                        branchcode = "580105";
                     }
 
-                    SqlCommand sqlinsert = new SqlCommand($"INSERT INTO RESIDENT (First_Name, Last_Name, Cell_Number, ID_Number, Branch_Code, Account_Number, Acknowlegde_Contract, Bank_ID) VALUES ('{name}','{surname}','{cellnum}','{id}','{branchcode}','{AccNum}','{contract}', '{bankID}')", conn);
+                    SqlCommand sqlinsert = new SqlCommand($"INSERT INTO dbo.RESIDENT (First_Name, Last_Name, Cell_Number, ID_Number, Branch_Code, Account_Number, Acknowlegde_Contract, Bank_ID) VALUES ('{name}','{surname}','{cellnum}','{id}','{branchcode}','{AccNum}','{contract}', {bankID})", conn);
                     adapter = new SqlDataAdapter();
 
                     adapter.InsertCommand = sqlinsert;

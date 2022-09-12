@@ -40,8 +40,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.tbBank = new System.Windows.Forms.GroupBox();
+            this.tbBranch = new System.Windows.Forms.ComboBox();
             this.tbAccNum = new System.Windows.Forms.TextBox();
-            this.tbBranch = new System.Windows.Forms.TextBox();
             this.cbContract = new System.Windows.Forms.CheckBox();
             this.lblAccNum = new System.Windows.Forms.Label();
             this.lblBranch = new System.Windows.Forms.Label();
@@ -146,8 +146,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // tbBank
             // 
-            this.tbBank.Controls.Add(this.tbAccNum);
             this.tbBank.Controls.Add(this.tbBranch);
+            this.tbBank.Controls.Add(this.tbAccNum);
             this.tbBank.Controls.Add(this.cbContract);
             this.tbBank.Controls.Add(this.lblAccNum);
             this.tbBank.Controls.Add(this.lblBranch);
@@ -158,6 +158,22 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tbBank.TabStop = false;
             this.tbBank.Text = "Bank Details:";
             // 
+            // tbBranch
+            // 
+            this.tbBranch.FormattingEnabled = true;
+            this.tbBranch.Items.AddRange(new object[] {
+            "Standard Bank\t",
+            "FirstRand",
+            "Absa",
+            "NedBank",
+            "Investec ",
+            "Capitec",
+            "FNB"});
+            this.tbBranch.Location = new System.Drawing.Point(115, 43);
+            this.tbBranch.Name = "tbBranch";
+            this.tbBranch.Size = new System.Drawing.Size(121, 21);
+            this.tbBranch.TabIndex = 4;
+            // 
             // tbAccNum
             // 
             this.tbAccNum.Location = new System.Drawing.Point(136, 96);
@@ -165,19 +181,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tbAccNum.Size = new System.Drawing.Size(100, 20);
             this.tbAccNum.TabIndex = 3;
             // 
-            // tbBranch
-            // 
-            this.tbBranch.Location = new System.Drawing.Point(136, 40);
-            this.tbBranch.Name = "tbBranch";
-            this.tbBranch.Size = new System.Drawing.Size(100, 20);
-            this.tbBranch.TabIndex = 2;
-            // 
             // cbContract
             // 
             this.cbContract.AutoSize = true;
             this.cbContract.Location = new System.Drawing.Point(54, 161);
             this.cbContract.Name = "cbContract";
-            this.cbContract.Size = new System.Drawing.Size(134, 17);
+            this.cbContract.Size = new System.Drawing.Size(141, 21);
             this.cbContract.TabIndex = 2;
             this.cbContract.Text = "Acknowledge Contract";
             this.cbContract.UseVisualStyleBackColor = true;
@@ -196,9 +205,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblBranch.AutoSize = true;
             this.lblBranch.Location = new System.Drawing.Point(21, 42);
             this.lblBranch.Name = "lblBranch";
-            this.lblBranch.Size = new System.Drawing.Size(71, 13);
+            this.lblBranch.Size = new System.Drawing.Size(66, 13);
             this.lblBranch.TabIndex = 0;
-            this.lblBranch.Text = "Branch code:";
+            this.lblBranch.Text = "Bank Name:";
             // 
             // btnAdd
             // 
@@ -283,7 +292,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.GroupBox tbBank;
         private System.Windows.Forms.TextBox tbAccNum;
-        private System.Windows.Forms.TextBox tbBranch;
         private System.Windows.Forms.CheckBox cbContract;
         private System.Windows.Forms.Label lblAccNum;
         private System.Windows.Forms.Label lblBranch;
@@ -295,5 +303,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ErrorProvider epID;
         private System.Windows.Forms.ErrorProvider epBranch;
         private System.Windows.Forms.ErrorProvider epAccNum;
+        private System.Windows.Forms.ComboBox tbBranch;
     }
 }
