@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace Group_26_Johns_RealEstate_Management_System
 {
@@ -236,8 +237,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             fullForm.ShowDialog();
 
         }
-
-        
 
         private void apartmentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
