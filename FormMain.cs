@@ -194,7 +194,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             string query = "SELECT COUNT(APARTMENT.Furnished) AS 'Count of Furnished Aparments' FROM RESIDENT " +
                 "JOIN APARTMENT ON RESIDENT.Resident_ID = APARTMENT.Resident_ID WHERE APARTMENT.Furnished = 1; ";
-            GenericReportForm fullForm = new GenericReportForm(query, "Summary Report Of Amount of Furnished Apartments");
+            GenericReportForm fullForm = new GenericReportForm(query, "Count Of Furnished Apartments");
             fullForm.ShowDialog();
         }
 
@@ -214,6 +214,27 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             FormEditResident editresident = new FormEditResident();
             editresident.ShowDialog();
+        }
+
+        private void summaryByDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT RESIDENT.Resident_ID,CONCAT(RESIDENT.First_Name+' ',RESIDENT.Last_Name+' ') AS Name," +
+                "APARTMENT.Occupation_Date,APARTMENT.Furnished,APARTMENT.Apartment_Number FROM RESIDENT " +
+                "JOIN APARTMENT ON RESIDENT.Resident_ID = APARTMENT.Resident_ID ORDER BY APARTMENT.Occupation_Date DESC;";
+            GenericReportForm fullForm = new GenericReportForm(query, "Apartment Sorted By Date In Descending Order");
+            fullForm.ShowDialog();
+        }
+
+        private void residentsSortedByAlphabeticalOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT RESIDENT.Resident_ID,CONCAT(RESIDENT.First_Name+' ',RESIDENT.Last_Name+' ') AS Name," +
+               "RESIDENT.Cell_Number,RESIDENT.ID_Number,RESIDENT.Branch_Code,RESIDENT.Account_Number," +
+               "APARTMENT.Apartment_ID,APARTMENT.Occupation_Date,APARTMENT.Furnished,APARTMENT.Apartment_Number," +
+               "BANK.Bank_ID,BANK.Bank_Name FROM RESIDENT JOIN APARTMENT ON RESIDENT.Resident_ID = APARTMENT.Resident_ID " +
+               "JOIN BANK ON RESIDENT.Bank_ID = BANK.Bank_ID ORDER BY Name ASC;";
+            GenericReportForm fullForm = new GenericReportForm(query, "Full Report Sorted By Resident Name Of Johns Apartments");
+            fullForm.ShowDialog();
+
         }
     }
 }
