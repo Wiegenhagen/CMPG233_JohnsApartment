@@ -109,7 +109,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.residentsToolStripMenuItem.Name = "residentsToolStripMenuItem";
-            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.residentsToolStripMenuItem.Text = "Residents";
             // 
             // addNewToolStripMenuItem
@@ -140,7 +140,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeAppartmentToolStripMenuItem,
             this.editExistingAppartmentToolStripMenuItem});
             this.apartmentsToolStripMenuItem.Name = "apartmentsToolStripMenuItem";
-            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.apartmentsToolStripMenuItem.Text = "Apartments";
             this.apartmentsToolStripMenuItem.Click += new System.EventHandler(this.apartmentsToolStripMenuItem_Click);
             // 
@@ -149,7 +149,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
             this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
             this.addNewToolStripMenuItem1.Text = "Add New Appartment";
-            
             // 
             // removeAppartmentToolStripMenuItem
             // 
@@ -363,7 +362,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pAppartments.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pAppartments.Controls.Add(this.lblApartments);
             this.pAppartments.Controls.Add(this.lblTAppartments);
-            this.pAppartments.Location = new System.Drawing.Point(21, 203);
+            this.pAppartments.Location = new System.Drawing.Point(318, 419);
             this.pAppartments.Name = "pAppartments";
             this.pAppartments.Size = new System.Drawing.Size(157, 131);
             this.pAppartments.TabIndex = 7;
@@ -373,7 +372,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pResidents.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pResidents.Controls.Add(this.lblTResidents);
             this.pResidents.Controls.Add(this.lblResidents);
-            this.pResidents.Location = new System.Drawing.Point(21, 383);
+            this.pResidents.Location = new System.Drawing.Point(80, 419);
             this.pResidents.Name = "pResidents";
             this.pResidents.Size = new System.Drawing.Size(157, 131);
             this.pResidents.TabIndex = 8;
@@ -392,7 +391,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pUsers.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pUsers.Controls.Add(this.lblTUsers);
             this.pUsers.Controls.Add(this.lblUsers);
-            this.pUsers.Location = new System.Drawing.Point(234, 203);
+            this.pUsers.Location = new System.Drawing.Point(547, 419);
             this.pUsers.Name = "pUsers";
             this.pUsers.Size = new System.Drawing.Size(157, 131);
             this.pUsers.TabIndex = 9;
@@ -418,7 +417,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // mcCal
             // 
-            this.mcCal.Location = new System.Drawing.Point(491, 203);
+            this.mcCal.Location = new System.Drawing.Point(281, 202);
             this.mcCal.Name = "mcCal";
             this.mcCal.TabIndex = 10;
             // 
@@ -426,7 +425,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.ClientSize = new System.Drawing.Size(800, 586);
             this.Controls.Add(this.mcCal);
             this.Controls.Add(this.pUsers);
             this.Controls.Add(this.pResidents);
