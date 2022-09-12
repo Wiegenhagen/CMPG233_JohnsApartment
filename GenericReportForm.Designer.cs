@@ -43,10 +43,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Blue;
-            this.btnSave.Location = new System.Drawing.Point(868, 391);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(1157, 481);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(184, 64);
+            this.btnSave.Size = new System.Drawing.Size(245, 79);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save As";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -56,10 +56,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Blue;
-            this.btnBack.Location = new System.Drawing.Point(11, 391);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(15, 481);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(184, 64);
+            this.btnBack.Size = new System.Drawing.Size(245, 79);
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back to Home Page";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -69,20 +69,19 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.lblBankName.AutoSize = true;
             this.lblBankName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBankName.Location = new System.Drawing.Point(343, 422);
-            this.lblBankName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBankName.Location = new System.Drawing.Point(457, 519);
             this.lblBankName.Name = "lblBankName";
-            this.lblBankName.Size = new System.Drawing.Size(0, 17);
+            this.lblBankName.Size = new System.Drawing.Size(0, 20);
             this.lblBankName.TabIndex = 16;
             // 
             // btnShow
             // 
             this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.Blue;
-            this.btnShow.Location = new System.Drawing.Point(441, 391);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShow.Location = new System.Drawing.Point(588, 481);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(184, 64);
+            this.btnShow.Size = new System.Drawing.Size(245, 79);
             this.btnShow.TabIndex = 15;
             this.btnShow.Text = "Preview of Report";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -91,36 +90,37 @@ namespace Group_26_Johns_RealEstate_Management_System
             // lstbxFullReport
             // 
             this.lstbxFullReport.FormattingEnabled = true;
-            this.lstbxFullReport.Location = new System.Drawing.Point(11, 90);
-            this.lstbxFullReport.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxFullReport.ItemHeight = 16;
+            this.lstbxFullReport.Location = new System.Drawing.Point(15, 111);
+            this.lstbxFullReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstbxFullReport.MultiColumn = true;
             this.lstbxFullReport.Name = "lstbxFullReport";
             this.lstbxFullReport.ScrollAlwaysVisible = true;
-            this.lstbxFullReport.Size = new System.Drawing.Size(1043, 264);
+            this.lstbxFullReport.Size = new System.Drawing.Size(1389, 324);
             this.lstbxFullReport.TabIndex = 14;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(340, 37);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Location = new System.Drawing.Point(394, 50);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(396, 31);
+            this.lblTitle.Size = new System.Drawing.Size(494, 39);
             this.lblTitle.TabIndex = 19;
             this.lblTitle.Text = "Full Report of JohnsApartments";
             // 
             // GenericReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1091, 492);
+            this.ClientSize = new System.Drawing.Size(1455, 606);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblBankName);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lstbxFullReport);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GenericReportForm";
             this.Text = "GenericReportForm";
             this.ResumeLayout(false);
