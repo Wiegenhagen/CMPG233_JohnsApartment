@@ -69,7 +69,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             try
             {
 
-                String AprtNom = UpdateAprtcb.SelectedIndex.ToString();
+                String AprtNom = UpdateAprtcb.Text;
                 String ResIDNm = UpdateRescb.SelectedIndex.ToString();
                 String OccuDate = UpdateCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbUpdateYes.Checked)
@@ -102,9 +102,9 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try
             {
-                String AprtNm = DeleteAprtcb.SelectedIndex.ToString();
+                String AprtNm = DeleteAprtcb.Text;
                 con.Open();
-                SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_ID = @AprtNm", con);
+                SqlCommand comm = new SqlCommand("DELETE FROM dbo.APARTMENT WHERE Apartment_Number = @AprtNm", con);
                 comm.Parameters.AddWithValue("@AprtNm", AprtNm);
                 comm.ExecuteNonQuery();
 
