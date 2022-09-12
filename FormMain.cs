@@ -243,5 +243,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             ApartmentFrm Aprtfrm = new ApartmentFrm();
             Aprtfrm.ShowDialog();
         }
+
+        private void residentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResidentsForm resForm = new ResidentsForm();
+            resForm.ShowDialog();
+        }
     }
 }
