@@ -212,6 +212,19 @@ namespace Group_26_Johns_RealEstate_Management_System
 
         }
 
-        
+        private void Exitbtn1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Exitbtn2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Exitbtn3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
