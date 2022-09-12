@@ -133,6 +133,12 @@
     <Compile Include="PdfWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResidentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResidentsForm.Designer.cs">
+      <DependentUpon>ResidentsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResidentsReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResidentsForm.resx">
+      <DependentUpon>ResidentsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResidentsReportForm.resx">
       <DependentUpon>ResidentsReportForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,9 +34,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.msMain = new System.Windows.Forms.MenuStrip();
             this.maintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.residentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAppartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +68,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblTUsers = new System.Windows.Forms.Label();
             this.lblUsers = new System.Windows.Forms.Label();
             this.mcCal = new System.Windows.Forms.MonthCalendar();
+            this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).BeginInit();
             this.pAppartments.SuspendLayout();
@@ -85,7 +83,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.maintenanceToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.accountToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.reToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
             this.msMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -104,34 +103,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // residentsToolStripMenuItem
             // 
-            this.residentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewToolStripMenuItem,
-            this.removeToolStripMenuItem,
-            this.updateToolStripMenuItem});
             this.residentsToolStripMenuItem.Name = "residentsToolStripMenuItem";
             this.residentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.residentsToolStripMenuItem.Text = "Residents";
-            // 
-            // addNewToolStripMenuItem
-            // 
-            this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.addNewToolStripMenuItem.Text = "Add New Resident";
-            this.addNewToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.removeToolStripMenuItem.Text = "Remove Resident";
-            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.updateToolStripMenuItem.Text = "Edit Existing Resident";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            this.residentsToolStripMenuItem.Click += new System.EventHandler(this.residentsToolStripMenuItem_Click);
             // 
             // apartmentsToolStripMenuItem
             // 
@@ -149,7 +124,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
             this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
             this.addNewToolStripMenuItem1.Text = "Add New Appartment";
-            
             // 
             // removeAppartmentToolStripMenuItem
             // 
@@ -422,6 +396,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.mcCal.Name = "mcCal";
             this.mcCal.TabIndex = 10;
             // 
+            // reToolStripMenuItem
+            // 
+            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
+            this.reToolStripMenuItem.Size = new System.Drawing.Size(32, 20);
+            this.reToolStripMenuItem.Text = "Re";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,9 +439,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.MenuStrip msMain;
         private System.Windows.Forms.ToolStripMenuItem maintenanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem residentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apartmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeAppartmentToolStripMenuItem;
@@ -496,5 +473,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ToolStripMenuItem summaryOfResidentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem summaryByDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem residentsSortedByAlphabeticalOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reToolStripMenuItem;
     }
 }
