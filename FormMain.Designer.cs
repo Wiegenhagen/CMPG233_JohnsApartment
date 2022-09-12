@@ -47,6 +47,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.residentsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appartmentsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.summaryOfResidentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.summaryByDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.residentsSortedByAlphabeticalOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +71,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblTUsers = new System.Windows.Forms.Label();
             this.lblUsers = new System.Windows.Forms.Label();
             this.mcCal = new System.Windows.Forms.MonthCalendar();
-            this.summaryByDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.residentsSortedByAlphabeticalOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).BeginInit();
             this.pAppartments.SuspendLayout();
@@ -109,7 +109,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.residentsToolStripMenuItem.Name = "residentsToolStripMenuItem";
-            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.residentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.residentsToolStripMenuItem.Text = "Residents";
             // 
             // addNewToolStripMenuItem
@@ -140,7 +140,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeAppartmentToolStripMenuItem,
             this.editExistingAppartmentToolStripMenuItem});
             this.apartmentsToolStripMenuItem.Name = "apartmentsToolStripMenuItem";
-            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.apartmentsToolStripMenuItem.Text = "Apartments";
             // 
             // addNewToolStripMenuItem1
@@ -148,6 +148,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
             this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(257, 26);
             this.addNewToolStripMenuItem1.Text = "Add New Appartment";
+            this.addNewToolStripMenuItem1.Click += new System.EventHandler(this.addNewToolStripMenuItem1_Click);
             // 
             // removeAppartmentToolStripMenuItem
             // 
@@ -185,21 +186,21 @@ namespace Group_26_Johns_RealEstate_Management_System
             // fullReportToolStripMenuItem
             // 
             this.fullReportToolStripMenuItem.Name = "fullReportToolStripMenuItem";
-            this.fullReportToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.fullReportToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
             this.fullReportToolStripMenuItem.Text = "Full Report";
             this.fullReportToolStripMenuItem.Click += new System.EventHandler(this.fullReportToolStripMenuItem_Click);
             // 
             // residentsReportToolStripMenuItem
             // 
             this.residentsReportToolStripMenuItem.Name = "residentsReportToolStripMenuItem";
-            this.residentsReportToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.residentsReportToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
             this.residentsReportToolStripMenuItem.Text = "Residents Report";
             this.residentsReportToolStripMenuItem.Click += new System.EventHandler(this.residentsReportToolStripMenuItem_Click);
             // 
             // appartmentsReportToolStripMenuItem
             // 
             this.appartmentsReportToolStripMenuItem.Name = "appartmentsReportToolStripMenuItem";
-            this.appartmentsReportToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.appartmentsReportToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
             this.appartmentsReportToolStripMenuItem.Text = "Apartments Report";
             this.appartmentsReportToolStripMenuItem.Click += new System.EventHandler(this.appartmentsReportToolStripMenuItem_Click);
             // 
@@ -209,6 +210,20 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.summaryOfResidentsToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
             this.summaryOfResidentsToolStripMenuItem.Text = "Count of Furnished Apartments";
             this.summaryOfResidentsToolStripMenuItem.Click += new System.EventHandler(this.summaryOfResidentsToolStripMenuItem_Click);
+            // 
+            // summaryByDateToolStripMenuItem
+            // 
+            this.summaryByDateToolStripMenuItem.Name = "summaryByDateToolStripMenuItem";
+            this.summaryByDateToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
+            this.summaryByDateToolStripMenuItem.Text = "Apartments Sorted By Date In Descending Order";
+            this.summaryByDateToolStripMenuItem.Click += new System.EventHandler(this.summaryByDateToolStripMenuItem_Click);
+            // 
+            // residentsSortedByAlphabeticalOrderToolStripMenuItem
+            // 
+            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Name = "residentsSortedByAlphabeticalOrderToolStripMenuItem";
+            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
+            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Text = "Full Report Sorted by Alphabetical Order";
+            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Click += new System.EventHandler(this.residentsSortedByAlphabeticalOrderToolStripMenuItem_Click);
             // 
             // accountToolStripMenuItem
             // 
@@ -223,21 +238,21 @@ namespace Group_26_Johns_RealEstate_Management_System
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
             this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // deleteAccountToolStripMenuItem
             // 
             this.deleteAccountToolStripMenuItem.Name = "deleteAccountToolStripMenuItem";
-            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deleteAccountToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.deleteAccountToolStripMenuItem.Text = "Delete User";
             this.deleteAccountToolStripMenuItem.Click += new System.EventHandler(this.deleteAccountToolStripMenuItem_Click);
             // 
@@ -255,28 +270,28 @@ namespace Group_26_Johns_RealEstate_Management_System
             // contactHelpDeskToolStripMenuItem
             // 
             this.contactHelpDeskToolStripMenuItem.Name = "contactHelpDeskToolStripMenuItem";
-            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.contactHelpDeskToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.contactHelpDeskToolStripMenuItem.Text = "Contact Help Desk";
             this.contactHelpDeskToolStripMenuItem.Click += new System.EventHandler(this.contactHelpDeskToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem
             // 
             this.exitProgramToolStripMenuItem.Name = "exitProgramToolStripMenuItem";
-            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.exitProgramToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitProgramToolStripMenuItem.Text = "Report An Issue";
             this.exitProgramToolStripMenuItem.Click += new System.EventHandler(this.exitProgramToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitProgramToolStripMenuItem1
             // 
             this.exitProgramToolStripMenuItem1.Name = "exitProgramToolStripMenuItem1";
-            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(215, 26);
+            this.exitProgramToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.exitProgramToolStripMenuItem1.Text = "Exit Program";
             this.exitProgramToolStripMenuItem1.Click += new System.EventHandler(this.exitProgramToolStripMenuItem1_Click);
             // 
@@ -285,7 +300,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pbBanner.Image = ((System.Drawing.Image)(resources.GetObject("pbBanner.Image")));
             this.pbBanner.InitialImage = null;
             this.pbBanner.Location = new System.Drawing.Point(107, 60);
-            this.pbBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBanner.Margin = new System.Windows.Forms.Padding(4);
             this.pbBanner.Name = "pbBanner";
             this.pbBanner.Size = new System.Drawing.Size(624, 116);
             this.pbBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -354,7 +369,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pAppartments.Controls.Add(this.lblApartments);
             this.pAppartments.Controls.Add(this.lblTAppartments);
             this.pAppartments.Location = new System.Drawing.Point(28, 250);
-            this.pAppartments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pAppartments.Margin = new System.Windows.Forms.Padding(4);
             this.pAppartments.Name = "pAppartments";
             this.pAppartments.Size = new System.Drawing.Size(209, 161);
             this.pAppartments.TabIndex = 7;
@@ -365,7 +380,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pResidents.Controls.Add(this.lblTResidents);
             this.pResidents.Controls.Add(this.lblResidents);
             this.pResidents.Location = new System.Drawing.Point(28, 471);
-            this.pResidents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pResidents.Margin = new System.Windows.Forms.Padding(4);
             this.pResidents.Name = "pResidents";
             this.pResidents.Size = new System.Drawing.Size(209, 161);
             this.pResidents.TabIndex = 8;
@@ -386,7 +401,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.pUsers.Controls.Add(this.lblTUsers);
             this.pUsers.Controls.Add(this.lblUsers);
             this.pUsers.Location = new System.Drawing.Point(312, 250);
-            this.pUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pUsers.Margin = new System.Windows.Forms.Padding(4);
             this.pUsers.Name = "pUsers";
             this.pUsers.Size = new System.Drawing.Size(209, 161);
             this.pUsers.TabIndex = 9;
@@ -419,20 +434,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.mcCal.Name = "mcCal";
             this.mcCal.TabIndex = 10;
             // 
-            // summaryByDateToolStripMenuItem
-            // 
-            this.summaryByDateToolStripMenuItem.Name = "summaryByDateToolStripMenuItem";
-            this.summaryByDateToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
-            this.summaryByDateToolStripMenuItem.Text = "Apartments Sorted By Date In Descending Order";
-            this.summaryByDateToolStripMenuItem.Click += new System.EventHandler(this.summaryByDateToolStripMenuItem_Click);
-            // 
-            // residentsSortedByAlphabeticalOrderToolStripMenuItem
-            // 
-            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Name = "residentsSortedByAlphabeticalOrderToolStripMenuItem";
-            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Size = new System.Drawing.Size(413, 26);
-            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Text = "Full Report Sorted by Alphabetical Order";
-            this.residentsSortedByAlphabeticalOrderToolStripMenuItem.Click += new System.EventHandler(this.residentsSortedByAlphabeticalOrderToolStripMenuItem_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,7 +448,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Controls.Add(this.pbBanner);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
