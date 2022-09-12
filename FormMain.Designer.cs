@@ -38,9 +38,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeAppartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editExistingAppartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requestAReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,33 +132,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // apartmentsToolStripMenuItem
             // 
-            this.apartmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewToolStripMenuItem1,
-            this.removeAppartmentToolStripMenuItem,
-            this.editExistingAppartmentToolStripMenuItem});
             this.apartmentsToolStripMenuItem.Name = "apartmentsToolStripMenuItem";
             this.apartmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.apartmentsToolStripMenuItem.Text = "Apartments";
             this.apartmentsToolStripMenuItem.Click += new System.EventHandler(this.apartmentsToolStripMenuItem_Click);
-            // 
-            // addNewToolStripMenuItem1
-            // 
-            this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
-            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
-            this.addNewToolStripMenuItem1.Text = "Add New Appartment";
-            
-            // 
-            // removeAppartmentToolStripMenuItem
-            // 
-            this.removeAppartmentToolStripMenuItem.Name = "removeAppartmentToolStripMenuItem";
-            this.removeAppartmentToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.removeAppartmentToolStripMenuItem.Text = "Remove Appartment";
-            // 
-            // editExistingAppartmentToolStripMenuItem
-            // 
-            this.editExistingAppartmentToolStripMenuItem.Name = "editExistingAppartmentToolStripMenuItem";
-            this.editExistingAppartmentToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.editExistingAppartmentToolStripMenuItem.Text = "Edit Existing Appartment";
             // 
             // reportsToolStripMenuItem
             // 
@@ -463,9 +437,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apartmentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem removeAppartmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editExistingAppartmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem requestAReportToolStripMenuItem;
