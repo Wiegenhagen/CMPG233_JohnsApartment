@@ -20,6 +20,16 @@ namespace Group_26_Johns_RealEstate_Management_System
         public SqlDataAdapter adapter;
         public SqlDataReader dReader;
 
+        /*  Arina Wiegenhagen 25965824
+            Etienne Berg 37443445
+            Roberto Pieterse 33674590
+            Michael Wakeford 37569368
+            Henlo Burger 37279432
+            Gian van Zijl 38098806
+
+
+         */
+
         public FormMain()
         {
             InitializeComponent();
