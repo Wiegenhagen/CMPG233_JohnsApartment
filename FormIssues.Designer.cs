@@ -47,66 +47,75 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(112, 9);
+            this.lblTitle.Location = new System.Drawing.Point(149, 11);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(238, 25);
+            this.lblTitle.Size = new System.Drawing.Size(305, 29);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Create a Support Request";
             // 
             // lblSubject
             // 
             this.lblSubject.AutoSize = true;
-            this.lblSubject.Location = new System.Drawing.Point(12, 61);
+            this.lblSubject.Location = new System.Drawing.Point(16, 75);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(43, 13);
+            this.lblSubject.Size = new System.Drawing.Size(52, 16);
             this.lblSubject.TabIndex = 1;
             this.lblSubject.Text = "Subject";
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(15, 86);
+            this.txtSubject.Location = new System.Drawing.Point(20, 106);
+            this.txtSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(430, 20);
+            this.txtSubject.Size = new System.Drawing.Size(572, 22);
             this.txtSubject.TabIndex = 2;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(12, 127);
+            this.lblEmail.Location = new System.Drawing.Point(16, 156);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(73, 13);
+            this.lblEmail.Size = new System.Drawing.Size(95, 16);
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "Email Address";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(15, 153);
+            this.txtEmail.Location = new System.Drawing.Point(20, 188);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(430, 20);
+            this.txtEmail.Size = new System.Drawing.Size(572, 22);
             this.txtEmail.TabIndex = 4;
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 193);
+            this.lblMessage.Location = new System.Drawing.Point(16, 238);
+            this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(50, 13);
+            this.lblMessage.Size = new System.Drawing.Size(64, 16);
             this.lblMessage.TabIndex = 5;
             this.lblMessage.Text = "Message";
             // 
             // rtxtMessage
             // 
-            this.rtxtMessage.Location = new System.Drawing.Point(15, 220);
+            this.rtxtMessage.Location = new System.Drawing.Point(20, 271);
+            this.rtxtMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtMessage.Name = "rtxtMessage";
-            this.rtxtMessage.Size = new System.Drawing.Size(430, 107);
+            this.rtxtMessage.Size = new System.Drawing.Size(572, 131);
             this.rtxtMessage.TabIndex = 6;
             this.rtxtMessage.Text = "";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(30, 342);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(42, 410);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 39);
             this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -114,9 +123,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(126, 342);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(177, 410);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(100, 39);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -127,9 +138,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblErrorSubject.AutoSize = true;
             this.lblErrorSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorSubject.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorSubject.Location = new System.Drawing.Point(50, 61);
+            this.lblErrorSubject.Location = new System.Drawing.Point(67, 75);
+            this.lblErrorSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblErrorSubject.Name = "lblErrorSubject";
-            this.lblErrorSubject.Size = new System.Drawing.Size(13, 17);
+            this.lblErrorSubject.Size = new System.Drawing.Size(15, 20);
             this.lblErrorSubject.TabIndex = 9;
             this.lblErrorSubject.Text = "*";
             this.lblErrorSubject.Visible = false;
@@ -139,9 +151,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblErrorEmail.AutoSize = true;
             this.lblErrorEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorEmail.Location = new System.Drawing.Point(82, 127);
+            this.lblErrorEmail.Location = new System.Drawing.Point(109, 156);
+            this.lblErrorEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblErrorEmail.Name = "lblErrorEmail";
-            this.lblErrorEmail.Size = new System.Drawing.Size(13, 17);
+            this.lblErrorEmail.Size = new System.Drawing.Size(15, 20);
             this.lblErrorEmail.TabIndex = 10;
             this.lblErrorEmail.Text = "*";
             this.lblErrorEmail.Visible = false;
@@ -151,18 +164,20 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.lblErrorMessage.AutoSize = true;
             this.lblErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage.Location = new System.Drawing.Point(59, 193);
+            this.lblErrorMessage.Location = new System.Drawing.Point(79, 238);
+            this.lblErrorMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(13, 17);
+            this.lblErrorMessage.Size = new System.Drawing.Size(15, 20);
             this.lblErrorMessage.TabIndex = 11;
             this.lblErrorMessage.Text = "*";
             this.lblErrorMessage.Visible = false;
             // 
             // FormIssues
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 377);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(660, 464);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.lblErrorEmail);
             this.Controls.Add(this.lblErrorSubject);
@@ -175,6 +190,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.lblSubject);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormIssues";
             this.Text = "FormIssues";
             this.ResumeLayout(false);
