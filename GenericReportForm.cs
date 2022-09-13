@@ -49,7 +49,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 string row = "";
                 for (int i = 0; i < reader.FieldCount; i++)
                 {
-                    string temp = reader.GetValue(i).ToString().Replace('_', ' ') + "\t";
+                    string temp = reader.GetValue(i).ToString().Replace('_', ' ').Replace("00:00:00","") + "\t";
                     if (temp.Length < 10)
                     {
                         temp += "\t";
