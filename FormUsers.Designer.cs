@@ -152,7 +152,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // pChange
             // 
-            this.pChange.BackColor = System.Drawing.SystemColors.Window;
+            this.pChange.BackColor = System.Drawing.Color.Silver;
             this.pChange.Controls.Add(this.lblTitle);
             this.pChange.Controls.Add(this.lblReEnter);
             this.pChange.Controls.Add(this.txtReEnter);
@@ -168,7 +168,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // pDelete
             // 
-            this.pDelete.BackColor = System.Drawing.SystemColors.Window;
+            this.pDelete.BackColor = System.Drawing.Color.Silver;
             this.pDelete.Controls.Add(this.lblUsername);
             this.pDelete.Controls.Add(this.txtDelete);
             this.pDelete.Controls.Add(this.lblPassword);
@@ -234,7 +234,8 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 298);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(310, 298);
             this.Controls.Add(this.pDelete);
             this.Controls.Add(this.pChange);
             this.Controls.Add(this.btnCancel);
