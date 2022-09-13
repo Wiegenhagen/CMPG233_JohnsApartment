@@ -37,7 +37,6 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnSkip = new System.Windows.Forms.Button();
             this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -66,7 +65,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Location = new System.Drawing.Point(363, 111);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 300);
             this.panel1.TabIndex = 1;
@@ -89,7 +88,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(87, 195);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(132, 46);
             this.btnLogin.TabIndex = 2;
@@ -100,7 +99,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(87, 145);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(132, 22);
             this.txtPassword.TabIndex = 1;
@@ -110,7 +109,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(87, 91);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(132, 22);
             this.txtUsername.TabIndex = 0;
@@ -121,24 +120,13 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(947, 501);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(104, 38);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSkip
-            // 
-            this.btnSkip.Location = new System.Drawing.Point(832, 394);
-            this.btnSkip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(151, 71);
-            this.btnSkip.TabIndex = 10;
-            this.btnSkip.Text = "Skip to main form (temp button)";
-            this.btnSkip.UseVisualStyleBackColor = true;
-            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // epPassword
             // 
@@ -154,10 +142,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.Text = "Login Form";
             this.panel1.ResumeLayout(false);
@@ -176,7 +163,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblCreateNewAccount;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.ErrorProvider epPassword;
         private System.Windows.Forms.ErrorProvider epUsername;
         private System.Windows.Forms.TextBox txtUsername;
