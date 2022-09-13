@@ -249,5 +249,15 @@ namespace Group_26_Johns_RealEstate_Management_System
             ResidentsForm resForm = new ResidentsForm();
             resForm.ShowDialog();
         }
+
+        private void mcCal_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void reToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
