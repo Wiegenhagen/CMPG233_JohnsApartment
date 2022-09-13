@@ -137,7 +137,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                     sqlinsert.Parameters.AddWithValue("@cellnum", tbCell2.Text ?? (object)DBNull.Value);
                     sqlinsert.Parameters.AddWithValue("@id", tbID2.Text ?? (object)DBNull.Value);
                     sqlinsert.Parameters.AddWithValue("@AccNum", tbAccNum2.Text ?? (object)DBNull.Value);
-                    sqlinsert.Parameters.AddWithValue("@branchcode", tbBranch2.Text ?? (object)DBNull.Value);
+                    sqlinsert.Parameters.AddWithValue("@branchcode", branchcode2 ?? (object)DBNull.Value);
                     sqlinsert.Parameters.AddWithValue("@bankID", bankID2);
                     sqlinsert.Parameters.AddWithValue("@id2", tbID2.Text ?? (object)DBNull.Value);
 
