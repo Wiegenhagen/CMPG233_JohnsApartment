@@ -49,24 +49,27 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // panelContainer
             // 
-            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.BackColor = System.Drawing.Color.Silver;
             this.panelContainer.Controls.Add(this.lblCancel);
             this.panelContainer.Controls.Add(this.txtConfirmPassword);
             this.panelContainer.Controls.Add(this.btnCreateAccount);
             this.panelContainer.Controls.Add(this.txtPassword);
             this.panelContainer.Controls.Add(this.txtUsername);
             this.panelContainer.Controls.Add(this.lblCreateAccount);
-            this.panelContainer.Location = new System.Drawing.Point(285, 88);
+            this.panelContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelContainer.Location = new System.Drawing.Point(380, 108);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(231, 241);
+            this.panelContainer.Size = new System.Drawing.Size(308, 297);
             this.panelContainer.TabIndex = 1;
             // 
             // lblCancel
             // 
             this.lblCancel.AutoSize = true;
-            this.lblCancel.Location = new System.Drawing.Point(188, 222);
+            this.lblCancel.Location = new System.Drawing.Point(243, 264);
+            this.lblCancel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblCancel.Size = new System.Drawing.Size(61, 20);
             this.lblCancel.TabIndex = 4;
             this.lblCancel.Text = "Cancel";
             this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
@@ -75,18 +78,21 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(65, 139);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(77, 171);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(152, 26);
             this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.Text = "Confirm Password";
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(65, 201);
+            this.btnCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.Location = new System.Drawing.Point(77, 218);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(100, 23);
+            this.btnCreateAccount.Size = new System.Drawing.Size(152, 57);
             this.btnCreateAccount.TabIndex = 3;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -94,18 +100,20 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(65, 104);
+            this.txtPassword.Location = new System.Drawing.Point(77, 126);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(152, 26);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Password";
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(65, 67);
+            this.txtUsername.Location = new System.Drawing.Point(77, 82);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(152, 26);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
@@ -113,9 +121,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             // lblCreateAccount
             // 
             this.lblCreateAccount.AutoSize = true;
-            this.lblCreateAccount.Location = new System.Drawing.Point(62, 31);
+            this.lblCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccount.Location = new System.Drawing.Point(72, 34);
+            this.lblCreateAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreateAccount.Name = "lblCreateAccount";
-            this.lblCreateAccount.Size = new System.Drawing.Size(106, 13);
+            this.lblCreateAccount.Size = new System.Drawing.Size(192, 25);
             this.lblCreateAccount.TabIndex = 5;
             this.lblCreateAccount.Text = "Create New Account";
             // 
@@ -133,9 +143,11 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(713, 415);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(932, 499);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(119, 40);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -143,12 +155,13 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // FormCreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panelContainer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCreateAccount";
             this.Text = "FormCreateAccount";
             this.panelContainer.ResumeLayout(false);

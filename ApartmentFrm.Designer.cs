@@ -32,6 +32,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Exitbtn1 = new System.Windows.Forms.Button();
             this.AddApartBtn = new System.Windows.Forms.Button();
             this.ApartNumtxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Exitbtn2 = new System.Windows.Forms.Button();
             this.UpdateAprtcb = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,13 +61,12 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Exitbtn3 = new System.Windows.Forms.Button();
             this.DeleteAprtcb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.DeleteAprtbtn = new System.Windows.Forms.Button();
-            this.Exitbtn1 = new System.Windows.Forms.Button();
-            this.Exitbtn2 = new System.Windows.Forms.Button();
-            this.Exitbtn3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,8 +81,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(4, 4);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(872, 692);
@@ -89,19 +91,21 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.CadetBlue;
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(864, 663);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(864, 659);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Apartment";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.Exitbtn1);
             this.panel1.Controls.Add(this.AddApartBtn);
             this.panel1.Controls.Add(this.ApartNumtxt);
@@ -113,16 +117,29 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbResName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(96, 31);
+            this.panel1.Location = new System.Drawing.Point(102, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 556);
             this.panel1.TabIndex = 1;
             // 
+            // Exitbtn1
+            // 
+            this.Exitbtn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn1.Location = new System.Drawing.Point(306, 486);
+            this.Exitbtn1.Margin = new System.Windows.Forms.Padding(4);
+            this.Exitbtn1.Name = "Exitbtn1";
+            this.Exitbtn1.Size = new System.Drawing.Size(175, 42);
+            this.Exitbtn1.TabIndex = 11;
+            this.Exitbtn1.Text = "&Exit";
+            this.Exitbtn1.UseVisualStyleBackColor = true;
+            this.Exitbtn1.Click += new System.EventHandler(this.Exitbtn1_Click);
+            // 
             // AddApartBtn
             // 
+            this.AddApartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddApartBtn.Location = new System.Drawing.Point(123, 486);
-            this.AddApartBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddApartBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddApartBtn.Name = "AddApartBtn";
             this.AddApartBtn.Size = new System.Drawing.Size(175, 42);
             this.AddApartBtn.TabIndex = 10;
@@ -132,10 +149,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // ApartNumtxt
             // 
-            this.ApartNumtxt.Location = new System.Drawing.Point(336, 47);
-            this.ApartNumtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ApartNumtxt.Location = new System.Drawing.Point(306, 47);
+            this.ApartNumtxt.Margin = new System.Windows.Forms.Padding(4);
             this.ApartNumtxt.Name = "ApartNumtxt";
-            this.ApartNumtxt.Size = new System.Drawing.Size(132, 22);
+            this.ApartNumtxt.Size = new System.Drawing.Size(132, 26);
             this.ApartNumtxt.TabIndex = 9;
             // 
             // label4
@@ -152,10 +169,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // rbNo
             // 
             this.rbNo.AutoSize = true;
-            this.rbNo.Location = new System.Drawing.Point(336, 410);
-            this.rbNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbNo.Location = new System.Drawing.Point(331, 410);
+            this.rbNo.Margin = new System.Windows.Forms.Padding(4);
             this.rbNo.Name = "rbNo";
-            this.rbNo.Size = new System.Drawing.Size(47, 21);
+            this.rbNo.Size = new System.Drawing.Size(51, 24);
             this.rbNo.TabIndex = 7;
             this.rbNo.TabStop = true;
             this.rbNo.Text = "No";
@@ -165,9 +182,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.rbYes.AutoSize = true;
             this.rbYes.Location = new System.Drawing.Point(213, 410);
-            this.rbYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbYes.Margin = new System.Windows.Forms.Padding(4);
             this.rbYes.Name = "rbYes";
-            this.rbYes.Size = new System.Drawing.Size(53, 21);
+            this.rbYes.Size = new System.Drawing.Size(58, 24);
             this.rbYes.TabIndex = 6;
             this.rbYes.TabStop = true;
             this.rbYes.Text = "Yes";
@@ -208,9 +225,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.cbResName.FormattingEnabled = true;
             this.cbResName.Location = new System.Drawing.Point(213, 113);
-            this.cbResName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbResName.Margin = new System.Windows.Forms.Padding(4);
             this.cbResName.Name = "cbResName";
-            this.cbResName.Size = new System.Drawing.Size(173, 24);
+            this.cbResName.Size = new System.Drawing.Size(173, 28);
             this.cbResName.TabIndex = 2;
             // 
             // label1
@@ -226,19 +243,19 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.CadetBlue;
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(864, 663);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(864, 659);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update Apartment";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.Exitbtn2);
             this.panel2.Controls.Add(this.UpdateAprtcb);
             this.panel2.Controls.Add(this.label11);
@@ -253,29 +270,42 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.UpdateRescb);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(121, 52);
+            this.panel2.Location = new System.Drawing.Point(103, 48);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 556);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // Exitbtn2
+            // 
+            this.Exitbtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn2.Location = new System.Drawing.Point(302, 497);
+            this.Exitbtn2.Margin = new System.Windows.Forms.Padding(4);
+            this.Exitbtn2.Name = "Exitbtn2";
+            this.Exitbtn2.Size = new System.Drawing.Size(175, 42);
+            this.Exitbtn2.TabIndex = 15;
+            this.Exitbtn2.Text = "&Exit";
+            this.Exitbtn2.UseVisualStyleBackColor = true;
+            this.Exitbtn2.Click += new System.EventHandler(this.Exitbtn2_Click);
             // 
             // UpdateAprtcb
             // 
             this.UpdateAprtcb.FormattingEnabled = true;
-            this.UpdateAprtcb.Location = new System.Drawing.Point(365, 58);
-            this.UpdateAprtcb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateAprtcb.Location = new System.Drawing.Point(330, 59);
+            this.UpdateAprtcb.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateAprtcb.Name = "UpdateAprtcb";
-            this.UpdateAprtcb.Size = new System.Drawing.Size(160, 24);
+            this.UpdateAprtcb.Size = new System.Drawing.Size(160, 28);
             this.UpdateAprtcb.TabIndex = 14;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(211, 14);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 20);
+            this.label11.Size = new System.Drawing.Size(186, 25);
             this.label11.TabIndex = 13;
             this.label11.Text = "Update Apartment";
             // 
@@ -292,8 +322,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // UpdateAprtbtn
             // 
+            this.UpdateAprtbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateAprtbtn.Location = new System.Drawing.Point(119, 497);
-            this.UpdateAprtbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateAprtbtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateAprtbtn.Name = "UpdateAprtbtn";
             this.UpdateAprtbtn.Size = new System.Drawing.Size(175, 42);
             this.UpdateAprtbtn.TabIndex = 10;
@@ -303,10 +334,10 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // UpdateAprtNumtxt
             // 
-            this.UpdateAprtNumtxt.Location = new System.Drawing.Point(307, 447);
-            this.UpdateAprtNumtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateAprtNumtxt.Location = new System.Drawing.Point(286, 447);
+            this.UpdateAprtNumtxt.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateAprtNumtxt.Name = "UpdateAprtNumtxt";
-            this.UpdateAprtNumtxt.Size = new System.Drawing.Size(132, 22);
+            this.UpdateAprtNumtxt.Size = new System.Drawing.Size(132, 26);
             this.UpdateAprtNumtxt.TabIndex = 9;
             // 
             // label7
@@ -324,9 +355,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.rbUpdateNo.AutoSize = true;
             this.rbUpdateNo.Location = new System.Drawing.Point(336, 410);
-            this.rbUpdateNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbUpdateNo.Margin = new System.Windows.Forms.Padding(4);
             this.rbUpdateNo.Name = "rbUpdateNo";
-            this.rbUpdateNo.Size = new System.Drawing.Size(47, 21);
+            this.rbUpdateNo.Size = new System.Drawing.Size(51, 24);
             this.rbUpdateNo.TabIndex = 7;
             this.rbUpdateNo.TabStop = true;
             this.rbUpdateNo.Text = "No";
@@ -336,9 +367,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.rbUpdateYes.AutoSize = true;
             this.rbUpdateYes.Location = new System.Drawing.Point(213, 410);
-            this.rbUpdateYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbUpdateYes.Margin = new System.Windows.Forms.Padding(4);
             this.rbUpdateYes.Name = "rbUpdateYes";
-            this.rbUpdateYes.Size = new System.Drawing.Size(53, 21);
+            this.rbUpdateYes.Size = new System.Drawing.Size(58, 24);
             this.rbUpdateYes.TabIndex = 6;
             this.rbUpdateYes.TabStop = true;
             this.rbUpdateYes.Text = "Yes";
@@ -379,9 +410,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             this.UpdateRescb.FormattingEnabled = true;
             this.UpdateRescb.Location = new System.Drawing.Point(213, 113);
-            this.UpdateRescb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateRescb.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateRescb.Name = "UpdateRescb";
-            this.UpdateRescb.Size = new System.Drawing.Size(173, 24);
+            this.UpdateRescb.Size = new System.Drawing.Size(173, 28);
             this.UpdateRescb.TabIndex = 2;
             // 
             // label10
@@ -397,46 +428,58 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.CadetBlue;
             this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(864, 663);
+            this.tabPage3.Size = new System.Drawing.Size(864, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove Apartment";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.Exitbtn3);
             this.panel3.Controls.Add(this.DeleteAprtcb);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.DeleteAprtbtn);
-            this.panel3.Location = new System.Drawing.Point(121, 52);
+            this.panel3.Location = new System.Drawing.Point(119, 111);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(620, 556);
+            this.panel3.Size = new System.Drawing.Size(620, 327);
             this.panel3.TabIndex = 3;
+            // 
+            // Exitbtn3
+            // 
+            this.Exitbtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exitbtn3.Location = new System.Drawing.Point(322, 168);
+            this.Exitbtn3.Margin = new System.Windows.Forms.Padding(4);
+            this.Exitbtn3.Name = "Exitbtn3";
+            this.Exitbtn3.Size = new System.Drawing.Size(175, 42);
+            this.Exitbtn3.TabIndex = 15;
+            this.Exitbtn3.Text = "&Exit";
+            this.Exitbtn3.UseVisualStyleBackColor = true;
+            this.Exitbtn3.Click += new System.EventHandler(this.Exitbtn3_Click);
             // 
             // DeleteAprtcb
             // 
             this.DeleteAprtcb.FormattingEnabled = true;
             this.DeleteAprtcb.Location = new System.Drawing.Point(215, 103);
-            this.DeleteAprtcb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAprtcb.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAprtcb.Name = "DeleteAprtcb";
-            this.DeleteAprtcb.Size = new System.Drawing.Size(160, 24);
+            this.DeleteAprtcb.Size = new System.Drawing.Size(160, 28);
             this.DeleteAprtcb.TabIndex = 14;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(211, 14);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(156, 20);
+            this.label12.Size = new System.Drawing.Size(179, 25);
             this.label12.TabIndex = 13;
             this.label12.Text = "Delete Apartment";
             // 
@@ -453,8 +496,9 @@ namespace Group_26_Johns_RealEstate_Management_System
             // 
             // DeleteAprtbtn
             // 
+            this.DeleteAprtbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteAprtbtn.Location = new System.Drawing.Point(119, 168);
-            this.DeleteAprtbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAprtbtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAprtbtn.Name = "DeleteAprtbtn";
             this.DeleteAprtbtn.Size = new System.Drawing.Size(175, 42);
             this.DeleteAprtbtn.TabIndex = 10;
@@ -462,38 +506,16 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.DeleteAprtbtn.UseVisualStyleBackColor = true;
             this.DeleteAprtbtn.Click += new System.EventHandler(this.DeleteAprtbtn_Click);
             // 
-            // Exitbtn1
+            // label5
             // 
-            this.Exitbtn1.Location = new System.Drawing.Point(306, 486);
-            this.Exitbtn1.Margin = new System.Windows.Forms.Padding(4);
-            this.Exitbtn1.Name = "Exitbtn1";
-            this.Exitbtn1.Size = new System.Drawing.Size(175, 42);
-            this.Exitbtn1.TabIndex = 11;
-            this.Exitbtn1.Text = "Exit";
-            this.Exitbtn1.UseVisualStyleBackColor = true;
-            this.Exitbtn1.Click += new System.EventHandler(this.Exitbtn1_Click);
-            // 
-            // Exitbtn2
-            // 
-            this.Exitbtn2.Location = new System.Drawing.Point(302, 497);
-            this.Exitbtn2.Margin = new System.Windows.Forms.Padding(4);
-            this.Exitbtn2.Name = "Exitbtn2";
-            this.Exitbtn2.Size = new System.Drawing.Size(175, 42);
-            this.Exitbtn2.TabIndex = 15;
-            this.Exitbtn2.Text = "Exit";
-            this.Exitbtn2.UseVisualStyleBackColor = true;
-            this.Exitbtn2.Click += new System.EventHandler(this.Exitbtn2_Click);
-            // 
-            // Exitbtn3
-            // 
-            this.Exitbtn3.Location = new System.Drawing.Point(322, 168);
-            this.Exitbtn3.Margin = new System.Windows.Forms.Padding(4);
-            this.Exitbtn3.Name = "Exitbtn3";
-            this.Exitbtn3.Size = new System.Drawing.Size(175, 42);
-            this.Exitbtn3.TabIndex = 15;
-            this.Exitbtn3.Text = "Exit";
-            this.Exitbtn3.UseVisualStyleBackColor = true;
-            this.Exitbtn3.Click += new System.EventHandler(this.Exitbtn3_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(221, 18);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 25);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Add Apartment";
             // 
             // ApartmentFrm
             // 
@@ -501,7 +523,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 698);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ApartmentFrm";
             this.Text = "ApartmentFrm";
             this.Load += new System.EventHandler(this.ApartmentFrm_Load);
@@ -558,5 +580,6 @@ namespace Group_26_Johns_RealEstate_Management_System
         private System.Windows.Forms.Button Exitbtn1;
         private System.Windows.Forms.Button Exitbtn2;
         private System.Windows.Forms.Button Exitbtn3;
+        private System.Windows.Forms.Label label5;
     }
 }

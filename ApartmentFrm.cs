@@ -226,5 +226,10 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             this.Close();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
