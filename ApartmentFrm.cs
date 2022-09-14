@@ -34,7 +34,7 @@ namespace Group_26_Johns_RealEstate_Management_System
         {
             try
             {
-                String ResIDNm = cbResName.SelectedIndex.ToString();
+                String ResIDNm = cbResName.Text;
                 String OccuDate = OccupationCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbYes.Checked)
                 {
@@ -47,7 +47,17 @@ namespace Group_26_Johns_RealEstate_Management_System
                 int ApartNumber = Convert.ToInt32(ApartNumtxt.Text);
 
                 con.Open();
-                SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResIDNm}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
+                SqlCommand commLookup = new SqlCommand($"SELECT Resident_ID FROM RESIDENT WHERE ID_Number = {ResIDNm};", con);
+                SqlDataReader reader = commLookup.ExecuteReader();
+
+                String ResID = "";
+                if (reader.Read())
+                {
+                    ResID = reader.GetValue(0).ToString();
+                }
+                reader.Close();
+
+                SqlCommand comm = new SqlCommand($"INSERT INTO dbo.APARTMENT(Resident_ID, Occupation_Date, Furnished, Apartment_Number) VALUES({ResID}, '{OccuDate}', '{furnished}', {ApartNumber})", con);
 
                 adapter = new SqlDataAdapter();
 
@@ -55,6 +65,8 @@ namespace Group_26_Johns_RealEstate_Management_System
                 adapter.InsertCommand.ExecuteNonQuery();
 
                 con.Close();
+
+                MessageBox.Show("Apartment successfully added");
             }
             catch (SqlException error)
             {
@@ -70,7 +82,7 @@ namespace Group_26_Johns_RealEstate_Management_System
             {
 
                 String AprtNom = UpdateAprtcb.Text;
-                String ResIDNm = UpdateRescb.SelectedIndex.ToString();
+                String ResIDNm = UpdateRescb.Text;
                 String OccuDate = UpdateCal.SelectionRange.Start.ToString("yyyy-MM-dd");
                 if (rbUpdateYes.Checked)
                 {
@@ -80,22 +92,34 @@ namespace Group_26_Johns_RealEstate_Management_System
                 {
                     furnished = false;
                 }
-                int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
+
                 con.Open();
+                SqlCommand commLookup = new SqlCommand($"SELECT Resident_ID FROM RESIDENT WHERE ID_Number = {ResIDNm};", con);
+                SqlDataReader reader = commLookup.ExecuteReader();
+
+                String ResID = "";
+                if (reader.Read())
+                {
+                    ResID = reader.GetValue(0).ToString();
+                }
+                reader.Close();
+                int ApartNumber = Convert.ToInt32(UpdateAprtNumtxt.Text);
+                
                 SqlCommand comm = new SqlCommand("UPDATE dbo.APARTMENT SET Resident_ID = @ResID, Occupation_Date = @OccuDate, Furnished = @Furn, Apartment_Number = @AprtNum WHERE Apartment_Number = @AprtNm", con);
                 comm.Parameters.AddWithValue("@AprtNm", AprtNom);
-                comm.Parameters.AddWithValue("@ResID", ResIDNm);
+                comm.Parameters.AddWithValue("@ResID", ResID);
                 comm.Parameters.AddWithValue("@OccuDate", OccuDate);
                 comm.Parameters.AddWithValue("@Furn", furnished);
                 comm.Parameters.AddWithValue("AprtNum", ApartNumber);
                 comm.ExecuteNonQuery();
                 con.Close();
+                //MessageBox.Show("Apartment successfully updated");
             }
             catch (SqlException error)
             {
                 MessageBox.Show(error.Message);
             }
-
+            MessageBox.Show("Apartment successfully updated");
             this.Close();
         }
         private void DeleteAprtbtn_Click(object sender, EventArgs e)
@@ -109,6 +133,7 @@ namespace Group_26_Johns_RealEstate_Management_System
                 comm.ExecuteNonQuery();
 
                 con.Close();
+               // MessageBox.Show("Apartment successfully deleted");
             }
             catch (SqlException error)
             {
@@ -117,6 +142,7 @@ namespace Group_26_Johns_RealEstate_Management_System
 
 
             loadDeletAprtIDComboBox();
+            MessageBox.Show("Apartment successfully deleted");
             this.Close();
         }
         private void loadResComboBox()
